@@ -1,0 +1,114 @@
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .form {
+    background: #f7f7f7;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+  }
+  
+  .inputGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .inputGroup i {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    color:  white;
+    font-weight: 900;
+
+  }
+  
+  .inputGroup input:focus {
+    border: 2px solid transparent; /* Set a transparent border for background visibility */
+    background-clip: padding-box; /* Ensure the background gradient doesn't overlap the content */
+    border-radius: 15px; /* Add a border radius if needed */
+    animation: sparkle-border 3s linear infinite; /* Sparkling animation */
+
+  }
+  
+  /* Define the sparkling gradient animation */
+  @keyframes sparkle-border {
+    0% {
+      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
+    }
+    25% {
+      border-image-source: linear-gradient(90deg, #ffa41b, #ffe259, #ff6f61, #ffa41b);
+    }
+    50% {
+      border-image-source: linear-gradient(90deg, #ffe259, #ff6f61, #ffa41b, #ffe259);
+    }
+    75% {
+      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
+    }
+  }
+  
+  .inputGroup input:focus {
+    border-width: 2px; /* Adjust border thickness */
+    border-image-slice: 1; /* Ensure the gradient applies fully to the border */
+  }
+  
+  
+  .button {
+    background: #4EA685;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: black;
+    color: white;
+  }
+  
+  .forgotPassword {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .signUpText {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .pointer {
+    color: white;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  
+  .pointer:hover {
+    text-decoration: underline;
+  }
+  

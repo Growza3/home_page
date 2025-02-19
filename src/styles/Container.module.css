@@ -1,0 +1,12 @@
+.yellowcontainer {
+    background-color: #ffcc00; /* Bright Yellow */
+    border-radius: 20px;
+    padding: 20px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Aligns content to the top */
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}

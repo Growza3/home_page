@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+
+.historySection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 80px;
+  background-color: #fff;
+  margin-top: 250px;
+}
+
+.historyContent {
+  max-width: 50%;
+}
+
+.historyTitle {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #d4a017;
+}
+
+.historyHeading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.historyHeading span {
+  color: #000;
+}
+
+.historyTimeline {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.year {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  transform: rotate(-90deg);
+  margin-right: 20px;
+}
+
+.historyText h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.historyText p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.historyBadges {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.historyBadges img {
+  width: 80px;
+  height: auto;
+}
+
+.historyImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .historySection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .historyContent {
+    max-width: 100%;
+  }
+
+  .historyTimeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .year {
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .historyBadges {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,39 @@
+.counter-section {
+    background: #ffffff;  
+    text-align: center;
+    margin-top: -50px;
+    justify-content: left;
+    align-items: left;
+    left: 0;
+    margin-bottom: 50px;
+  }
+  
+  .counter-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .counter-box {
+    background: white;
+    padding: 20px;
+    border-radius: 0 50% 0 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 150px;
+    background-color: seagreen;
+  }
+  
+  .counter-box h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .counter-box p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white;
+  }
+  

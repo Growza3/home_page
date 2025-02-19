@@ -1,0 +1,68 @@
+.scrollingSection {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  background: url("../assets/image5.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+  /* Overlay for dark effect */
+  .scrollingSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+
+  }
+
+/* Overlay text at the center */
+.overlayText {
+  position: absolute;
+  top: 20%;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Logo scrolling container */
+.scrollingLogos {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 20px; /* Adjust based on placement */
+}
+
+/* Moving logos */
+.logoTrack {
+  display: flex;
+  width: 200%;
+  animation: scrollLogos 10s linear infinite;
+}
+
+.logoTrack img {
+  width: 120px; /* Adjust size */
+  margin: 0 20px;
+  height: auto;
+  filter: brightness(1.2); /* Enhance visibility */
+  opacity: 0.9;
+}
+
+/* Keyframes for continuous right-to-left scrolling */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

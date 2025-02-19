@@ -1,0 +1,164 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  /*===== Colores =====*/
+  --first-color: #F2A20C;
+  --white-color: #E9EAEC;
+  --dark-color: #272D40;
+  --dark-color-lighten: #F2F5FF;
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+}
+
+
+h1, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*===== CARD =====*/
+.Rcontainer {
+  display: flex;
+  flex-wrap: wrap; /* Prevent horizontal scrolling */
+  justify-content: center; /* Center the cards */
+  align-items: center;
+  background-color: var(--dark-color-lighten);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 20px; /* Adjust gap to prevent overflow */
+  padding: 60px; /* Reduce padding */
+  width: 100%; /* Make it responsive */
+  height: auto;
+  border-radius: 20px;
+}
+
+.Rcard {
+  width: 300px;
+  height: 420px; /* Increased height to prevent cutting */
+  background-color: var(--dark-color);
+  border-radius: 1rem;
+  padding: 2rem 1rem 0;
+  color: var(--white-color);
+  position: relative;
+  overflow: visible; /* Change from hidden to visible */
+}
+
+.Rcard__img {
+  position: absolute;
+  width: 260px;
+  left: 50%; /* Center the image */
+  transform: translateX(-50%); /* Ensure it's centered */
+  filter: drop-shadow(5px 10px 15px rgba(8,9,13,.4));
+  transition: transform 0.5s ease-in-out;
+}
+
+.Rcard__data {
+  transform: translateY(13.2rem);
+  text-align: center;
+}
+
+.Rcard__title {
+  font-size: var(--h1-font-size);
+  color: var(--first-color);
+  margin-bottom: .5rem;
+}
+
+.Rcard__preci {
+  display: inline-block;
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.Rcard__description {
+  font-size: var(--small-font-size);
+  text-align: initial;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+}
+
+.Rcard__button {
+  display: block;
+  width: max-content;
+  padding: 1.125rem 2rem;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  border-radius: .5rem;
+  font-weight: 600;
+  transition: .2s;
+  opacity: 0;
+}
+
+.Rcard__button:hover {
+  box-shadow: 0 18px 40px -12px rgba(242,162,12,.35);
+}
+
+.Rcard__img, 
+.Rcard__data, 
+.Rcard__title, 
+.Rcard__preci, 
+.Rcard__description {
+  transition: .5s;
+}
+
+/* Hover card effect */
+/* Adjust hover effect */
+.Rcard:hover .Rcard__img {
+  transform: translate(-50%, -6rem) rotate(-15deg); /* Less shift to prevent cut-off */
+}
+
+.Rcard:hover .Rcard__data {
+  transform: translateY(4.8rem);
+}
+
+.Rcard:hover .Rcard__title {
+  transform: translateX(-2.3rem);
+  margin-bottom: 0;
+}
+
+.Rcard:hover .Rcard__preci {
+  transform: translateX(-6.8rem);
+}
+
+.Rcard:hover .Rcard__description, 
+.Rcard:hover .Rcard__button {
+  transition-delay: .2s;
+  opacity: 1;
+}
+.ExploreButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ExploreButton:hover {
+  background-color: #d48c08;
+}
+.recipe-title {
+  font-size: 72px; /* Reduce size for better fit */
+  font-weight: bold;
+  color: #4d3766;
+  text-align: center;
+  padding: 50px;
+  align-items: center;
+}
