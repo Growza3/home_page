@@ -8,6 +8,7 @@ const SignUp = ({ toggle }) => {
     email: "",
     password: "",
     confirmPassword: "",
+    role: "Buyer", // Default role is Buyer
   });
 
   const [error, setError] = useState("");
@@ -26,7 +27,7 @@ const SignUp = ({ toggle }) => {
     try {
       const response = await axios.post("http://localhost:5000/api/users/signup", formData);
       setSuccess(response.data.message);
-      setFormData({ username: "", email: "", password: "", confirmPassword: "" });
+      setFormData({ username: "", email: "", password: "", confirmPassword: "", role: "Buyer" });
     } catch (err) {
       setError(err.response.data.error || "An error occurred");
     }
@@ -35,6 +36,16 @@ const SignUp = ({ toggle }) => {
   return (
     <div className={styles.formWrapper}>
       <form className={styles.form} onSubmit={handleSubmit}>
+        {/* Role Selection Toggle */}
+        <div className={styles.roleToggle}>
+          <span className={formData.role === "Buyer" ? styles.activeRole : ""} onClick={() => setFormData({ ...formData, role: "Buyer" })}>
+            Buyer
+          </span>
+          <span className={formData.role === "Seller" ? styles.activeRole : ""} onClick={() => setFormData({ ...formData, role: "Seller" })}>
+            Seller
+          </span>
+        </div>
+
         <div className={styles.inputGroup}>
           <i className="bx bxs-user"></i>
           <input
@@ -75,20 +86,18 @@ const SignUp = ({ toggle }) => {
             onChange={handleChange}
           />
         </div>
+
         <button className={styles.button}>Sign up</button>
-        <a
-          href="http://localhost:5000/api/users/auth/google"
-          className={styles.googleButton}
-        >
+        <a href="http://localhost:5000/api/users/auth/google" className={styles.googleButton}>
           <i className="bx bxl-google"></i> Sign up with Google
         </a>
+
         {error && <p className={styles.error}>{error}</p>}
         {success && <p className={styles.success}>{success}</p>}
+
         <p className={styles.switchText}>
           <span>Already have an account?</span>
-          <b onClick={toggle} className={styles.pointer}>
-            Sign in here
-          </b>
+          <b onClick={toggle} className={styles.pointer}>Sign in here</b>
         </p>
       </form>
     </div>

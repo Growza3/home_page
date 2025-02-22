@@ -1,0 +1,141 @@
+/* SellerDashboard.css */
+
+.dashboard-container {
+  display: flex;
+  background: #eafaf1;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background: #2c7057;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-menu li:hover {
+  background: #3e8c6a;
+  border-radius: 5px;
+}
+
+.visit-store {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visit-store button {
+  background: white;
+  color: #2c7057;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.greeting {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #f2b900;
+}
+
+.chart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.todo-list {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.stat-item {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-item .icon {
+  font-size: 2rem;
+  color: #4CAF50;
+}
+
+.top-products, .latest-invoice {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.product-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-card {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+}
+
+.latest-invoice table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.latest-invoice th, .latest-invoice td {
+  padding: 10px;
+  text-align: left;
+}
+
+.latest-invoice button {
+  background: #2c7057;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

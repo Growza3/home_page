@@ -13,7 +13,14 @@ import CounterSection from "./components/CounterSection";
 import ExperienceSection from "./components/ExperienceSection";
 import AboutUs from "./components/AboutUs";
 import HistorySection from "./components/HistorySection";
+import Footer from "./components/Footer";
+import SellerSignup from "./components/SellerSignup";
+import ProductPage from "./components/ProductPage";
+import SellerDashboard from "./components/SellerDashboard";
+import ProductDetail from "./components/ProductDetail";
+import SellerLanding from "./components/SellerLanding";
 
+ 
 
 const App = () => {
   // A function to conditionally render the header
@@ -47,6 +54,8 @@ const App = () => {
               <Carousel />
               <FeaturesSection />
               <Recipe />
+              <Footer/>
+
             </>
           }
         />
@@ -56,6 +65,12 @@ const App = () => {
 
         {/* Profile Page */}
         <Route path="/profile" element={<Profile />} /> {/* Add the Profile route here */}
+        <Route path="/SellerLanding" element={<SellerLanding />} />
+        <Route path="/ProductPage" element={<ProductPage />} />
+        <Route path="/dashboard/:sellerId" element={<SellerDashboard />} />        <Route path="/product/:id" element={<ProductDetail />} /> {/* Route for product detail page */}
+        <Route path="/SellerSignup" element={<SellerSignup />} />
+        <Route path="/dashboard" element={<SellerDashboard />} />
+
       </Routes>
     </Router>
   );

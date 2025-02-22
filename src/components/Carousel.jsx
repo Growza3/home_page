@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "../styles/ProductCard.module.css";
+import styles from "../styles/Carousel.module.css";
 import p1 from "../assets/p1.jpg";
 import p2 from "../assets/p2.jpg";
 import p3 from "../assets/p3.jpg";
@@ -72,7 +72,7 @@ const Carousel = () => {
           totalWidth - 1 // Ensure the last item can fully show before reset
         ) {
           setTimeout(() => {
-            carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+            carouselRef.current?.scrollTo({ left: 0, behavior: "smooth" });
           }, 3000); // Delay the reset to ensure the last item is fully visible
         }
       }

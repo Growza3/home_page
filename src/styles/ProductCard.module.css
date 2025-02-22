@@ -1,87 +1,114 @@
-.carousel {
-  position: relative;
+.container {
   width: 100%;
-  overflow: hidden;
-  padding: 40px 0;
-}
-
-.categoriesTitle {
-  margin-top: 200px;
-  font-size: 72px;
-  font-weight: bold;
-  color: #4d3766;
-  text-align: center;
-}
-
-.carouselContainer {
   display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
-.carouselItem {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 350px;
-  border-radius: 15px;
-  overflow: hidden;
-  background: #f8f9fa;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column */
+  gap: 30px; /* Space between cards */
+  max-width: 600px; /* Restrict grid width to maintain look */
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  height: 350px; /* Fixed height to ensure uniformity */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.carouselItem:hover {
-  transform: scale(1.05);
+.card:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
 }
 
-.carouselItemImg {
+.cardImageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 70%;
+  transition: transform 0.3s ease;
 }
 
-.carouselItemDetails {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+.cardImage {
+  max-width: 70%; /* Control the size of the image */
+  height: auto;
+  object-fit: contain; /* Ensure the image maintains aspect ratio */
+  transition: transform 0.3s ease; /* Smooth image zoom */
+}
+
+/* Animation on image when hovered */
+.card:hover .cardImageContainer {
+  transform: scale(1.05); /* Zoom-in effect */
+}
+
+.cardInfo {
+  padding: 5px 10px; /* Adjust the padding to create more space around the text */
   text-align: center;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  margin-top: -50px; /* Move the card info upward */
 }
 
-.carouselItem:hover .carouselItemDetails {
-  opacity: 1;
+.productName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.carouselButton {
+.productPrice {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px; /* Space between price and buttons */
+}
+
+.buttons {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  opacity: 0; /* Hide buttons by default */
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .buttons {
+  opacity: 1; /* Show buttons when card is hovered */
+}
+
+.eyeButton,
+.cartButton {
+  background-color: #4CAF50; /* Green for eye button */
+  color: white;
   border: none;
-  padding: 10px 15px;
+  border-radius: 5px;
+  padding: 10px;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  z-index: 10;
+  transition: transform 0.2s ease;
+  width: 50px; /* Set fixed width */
+  height: 50px; /* Set fixed height */
 }
 
-.carouselButton:hover {
-  background: rgba(255, 255, 255, 1);
+.eyeButton:hover,
+.cartButton:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #45a049; /* Darker green on hover */
 }
 
-.left {
-  left: 20px;
+.cartButton {
+  background-color: #f44336; /* Red for cart button */
 }
 
-.right {
-  right: 20px;
+.cartButton:hover {
+  background-color: #e53935; /* Darker red on hover */
 }

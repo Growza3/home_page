@@ -100,4 +100,29 @@
     background: #228b22;
     color: #fff;
   }
+  .roleToggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roleToggle span {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .activeRole {
+    background-color: #28a745;
+    color: white;
+    border-radius: 20px;
+  }
+  
   
