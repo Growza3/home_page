@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik:wght@400;500&family=Bree+Serif&display=swap');
+
+.aboutUs, .farmToTable,.imageGridSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    font-family: "Playfair Display", serif; /* Elegant font */
+    height: 500px;
+    border-radius: 0 50px 0 50px ;
+  }
+  
+  /* First Section */
+  .aboutUs {
+    background-color: #1d3b21; /* Dark green */
+    color: white;
+    height: 450px;
+  }
+  
+  .textContainer {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .symbol {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .textContainer h1, .textContainer h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  
+  .textContainer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .buyNow {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .buyNow:hover {
+    background-color: white;
+    color: #1d3b21;
+  }
+  .imageContainer1 {
+    flex: 1;
+    display: flex;
+    margin-right: -50px;
+    height: 450px;
+    margin-top: 150px;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    height: 500px;
+    margin-left: -50px;
+    overflow: hidden;
+  }
+  
+  .imageContainer img {
+    max-width: 50%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  /* Second Section */
+.farmToTable {
+    background-color: #f5f1e8; /* Light beige */
+    color: #1d3b21;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Needed for absolute positioning */
+  }
+  
+/* Main Image (Left Side) */
+.farmToTable .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    position: relative; /* This will help position the overlayed image */
+    border-radius: 50px;
+  }
+  
+  .farmToTable .textContainer {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+  }
+  
+ /* Small Image Overlay */
+.smallImageContainer {
+    position: absolute;
+    left: 17%; /* Adjust based on where you want the overlay */
+    z-index: 2; /* Make sure it appears above the main image */
+  }
+  
+ .smallImageContainer img {
+  width: 100%; /* Adjust the size as needed */
+  height: 350px;
+border-radius: 0 50px 0 50px;
+}
+  
+
+  
+  /* Individual Image Containers */
+ /* Third Section - Text Left, Image Right */
+.imageGridSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f1e8; /* Light beige */
+    padding: 50px;
+    height: 500px;
+  }
+  
+  /* Text on Left */
+  .imageGridSection .textContainer {
+    flex: 1;
+    max-width: 30%;
+    text-align: left;
+    color: #1d3b21;
+
+  }
+  
+  /* Image on Right */
+  .imageGridSection .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 80%;
+  }
+  
+  .imageGridSection img {
+    width: 100%;
+    max-width: 80%; /* Adjust width based on your design */
+    height: auto;
+    border-radius: 0 50px 0 50px;
+  }
+/* Our Team Section */
+/* Our Team Section */
+
+/* Our Team Section */
+.ourTeamSection {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('../assets/images/weatherleaf.jpg') no-repeat center center/cover; /* Add Background Image */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Dark Overlay for Better Readability */
+  .ourTeamSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 1;
+  }
+  
+  .ourTeamSection h2,
+  .ourTeamSection p {
+    position: relative;
+    z-index: 2; /* Ensure text is above overlay */
+    font-family: 'Cinzel Decorative', serif;
+  }
+  
+  .ourTeamSection h2 {
+    font-size: 32px;
+    color: #ffffff; /* White Text */
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .ourTeamSection h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #ffffff; /* White underline */
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+  
+  .ourTeamSection p {
+    font-size: 18px;
+    color: #f1f1f1; /* Light Text */
+    margin-bottom: 40px;
+  }
+  
+  /* Centered Team Grid */
+  .teamGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2; /* Ensure elements are above overlay */
+  }
+  
+  /* Team Member Card */
+  /* Team Member Card */
+.teamMember {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  width: 260px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Image Styling - Initially Round */
+.teamMember img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 12px;
+  border: 3px solid #2d572c;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover Effect - Image Expands to Cover the Card */
+.teamMember:hover img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Ensure Text is Above the Expanded Image */
+.teamMember h4,
+.teamMember p {
+  position: relative;
+  z-index: 3;
+  transition: color 0.3s ease-in-out;
+  color: black;
+}
+
+.teamMember:hover h4,
+.teamMember:hover p {
+  color: white; /* Ensure readability */
+}

@@ -1,28 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/HeroSection.module.css";
-import heroImage from "../assets/sunset.jpg"; // Replace with actual image path
+import home from "../assets/images/f4.png";
+import watermalon from "../assets/images/watermelon2.png";
+import strawberry from "../assets/images/drip.png";
+import leaf from "../assets/images/l2.png"; // Add your leaf image
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const HeroSection = () => {
+  const Navigate = useNavigate();
+  const [watermelonVisible, setWatermelonVisible] = useState(false);
+  const [strawberryVisible, setStrawberryVisible] = useState(false);
+  const [heroContentVisible, setHeroContentVisible] = useState(false);
+  useEffect(() => {
+        // Delay to trigger the watermelon animation after mounting
+        setTimeout(() => {
+          setWatermelonVisible(true);
+        }, 500);
+
+        // Delay to trigger the strawberry falling animation
+        setTimeout(() => {
+          setStrawberryVisible(true);
+        }, 300);
+
+        setTimeout(() => {
+          setHeroContentVisible(true);
+        }, 500);
+    }, []);
+
+const nav = () =>{
+  Navigate("/ProductPage");
+}
+
   return (
     <section className={styles.hero}>
-      <div className={styles["hero-content"]}>
-        <h1>Decorate your Home with Plants</h1>
-        <p>Place your order with us and get the best plants delivered to your doorstep.</p>
-        <button className={styles["shop-button"]}>Shop Now</button>
-      </div>
-      <div className={styles["hero-image"]}>
-        <img src={heroImage} alt="Decorated Room" />
+      {/* Strawberry Falling from the Top */}
+      <div className={`${styles["drip-container"]} ${strawberryVisible ? styles.show : ""}`}>
+        <img src={strawberry} alt="strawberry" className={styles["drip-image"]} />
       </div>
 
-        <div className={styles.wave}>
-      {/* Wave SVG */}
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fillOpacity="1" d="M0,192L80,208C160,224,320,256,480,229.3C640,203,800,117,960,80C1120,43,1280,53,1360,58.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
-      <div className="blank">
+      <div className={`${styles.heroContent} ${heroContentVisible ? styles["fade-in"] : ""} `}>        <p className={styles.discount}>EXTRA 50% OFF FOR ALL WINTER PRODUCT</p><br/>
+        <h1 className={styles.heading}>Modern Problem's <br /> Organic Solution</h1><br/>
+        <Link to="/ProductPage" className={styles.shopButton}>Shop Now</Link>      </div>
+
+      <div className={styles.heroImage}>
+        <img src={home} alt="Fruit Splash" />
       </div>
+
+      {/* Watermelon Animation */}
+      <div className={`${styles["watermelon-container"]} ${watermelonVisible ? styles.show : ""}`}>
+        <img src={watermalon} alt="Watermelon" className={styles["watermelon-image"]} />
+      </div>
+
+      {/* Leaf Image Positioned at Bottom Left */}
+      <div className={styles["leaf-container"]}>
+        <img src={leaf} alt="Leaf" className={styles["leaf-image"]} />
       </div>
     </section>
-    
   );
 };
 

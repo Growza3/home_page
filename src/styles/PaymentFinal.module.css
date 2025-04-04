@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik:wght@400;500&family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+
+/* Payment Container */
+.paymentContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f9f6f1;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  color: black;
+}
+
+/* Title */
+.paymentTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: rgba(227, 44, 44, 0.2);
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Summary Box */
+.summaryBox {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+}
+
+.summaryBox:hover {
+  transform: scale(1.02);
+}
+.btn{
+  background-color:#b56a43;
+  width: 300px;
+  margin-left: 400px;
+}
+.btn:hover{
+  background-color: white;
+  color: #b56a43;
+  border: 2px solid #b56a43;
+}
+/* Product Image */
+.productImage {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+.title{
+  font-family: 'Cinzel Decorative', serif;
+  color: black;
+}
+/* Product Details */
+.productDetails {
+  flex: 1;
+  display: flex-end;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 10px;
+}
+
+.productName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.productPrice {
+  font-size: 16px;
+  color: rgba(227, 44, 44, 0.2);
+  font-weight: 600;
+}
+
+/* Address Form */
+.addressForm {
+  margin-top: 20px;
+}
+
+.addressForm input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.addressForm input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.2);
+}
+
+/* Confirm Button */
+.confirmBtn {
+  width: 50%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  color: white;
+  border: none;
+  margin-top: 15px;
+}
+
+.confirmBtn:hover {
+  background: linear-gradient(to right, #388E3C, #1B5E20);
+  transform: scale(1.03);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

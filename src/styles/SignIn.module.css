@@ -1,114 +1,184 @@
+/* New Stylish Signin Page CSS */
+
+/* Background with gradient */
+body {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  font-family: 'Poppins', sans-serif;
+}
+
 .formWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Form Title */
+.authTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.inputg{
+  border: 2px solid black;
+}
+.inputGroup i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0a0909;
+  font-size: 1.2rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid black;
+}
+
+.inputGroup input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+}
+
+/* Button */
+.button {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: black;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  transform: scale(1.05);
+}
+
+/* Switch Text */
+.switchText {
+  font-size: 14px;
+  color: black;
+  margin-top: 1rem;
+}
+
+.pointer {
+  color: #ff9a9e;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pointer:hover {
+  text-decoration: underline;
+}
+
+/* Toggle Button for Roles */
+.roleToggle {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 5px;
+  width: fit-content;
+  margin: auto;
+}
+
+.roleToggle span {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.activeRole {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 20px;
+}
+
+/* Social Login Buttons */
+.authButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.googleButton, .appleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 140px;
+}
+
+.googleButton {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.appleButton {
+  background-color: black;
+  color: white;
+}
+
+/* OR Divider */
+.orContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.orText {
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
   .form {
-    background: #f7f7f7;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-
+    width: 90%;
   }
-  
-  .inputGroup {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    position: relative;
-  }
-  
-  .inputGroup i {
-    position: absolute;
-    left: 10px;
-    font-size: 1.2rem;
-    color: white;
-  }
-  
-  .inputGroup input {
-    width: 100%;
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    outline: none;
-    color:  white;
-    font-weight: 900;
-
-  }
-  
-  .inputGroup input:focus {
-    border: 2px solid transparent; /* Set a transparent border for background visibility */
-    background-clip: padding-box; /* Ensure the background gradient doesn't overlap the content */
-    border-radius: 15px; /* Add a border radius if needed */
-    animation: sparkle-border 3s linear infinite; /* Sparkling animation */
-
-  }
-  
-  /* Define the sparkling gradient animation */
-  @keyframes sparkle-border {
-    0% {
-      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
-    }
-    25% {
-      border-image-source: linear-gradient(90deg, #ffa41b, #ffe259, #ff6f61, #ffa41b);
-    }
-    50% {
-      border-image-source: linear-gradient(90deg, #ffe259, #ff6f61, #ffa41b, #ffe259);
-    }
-    75% {
-      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
-    }
-    100% {
-      border-image-source: linear-gradient(90deg, #ff6f61, #ffa41b, #ffe259, #ff6f61);
-    }
-  }
-  
-  .inputGroup input:focus {
-    border-width: 2px; /* Adjust border thickness */
-    border-image-slice: 1; /* Ensure the gradient applies fully to the border */
-  }
-  
-  
-  .button {
-    background: #4EA685;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-  }
-  
-  .button:hover {
-    background: black;
-    color: white;
-  }
-  
-  .forgotPassword {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: white;
-  }
-  
-  .signUpText {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: white;
-  }
-  
-  .pointer {
-    color: white;
-    cursor: pointer;
-    margin-left: 0.5rem;
-  }
-  
-  .pointer:hover {
-    text-decoration: underline;
-  }
-  
+}

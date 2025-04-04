@@ -1,0 +1,31 @@
+/* src/styles/Loader.css */
+.loaderContainer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent to allow visibility */
+  backdrop-filter: blur(10px) !important; /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px) !important; /* Safari support */
+  z-index: 2000 !important;
+}
+
+/* Ensure the main content is visible behind the loader */
+.blur-active {
+  filter: blur(10px) !important; /* Blurs the content while loading */
+  pointer-events: none !important; /* Prevents interaction while loading */
+}
+
+.lottie {
+  width: 500px !important;
+  height: 500px !important;
+  background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent to allow visibility */
+  backdrop-filter: blur(10px) !important; /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px) !important; /* Safari support */
+  z-index: 2000 !important;
+  border: none !important;
+}

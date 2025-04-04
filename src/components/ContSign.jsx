@@ -34,10 +34,7 @@ const ContSign = () => {
       </div>
 
       {/* Content Section */}
-      <div className={`${styles.row} ${styles["content-row"]}`}>
-        <Content type="sign-in" title="Welcome" />
-        <Content type="sign-up" title="Join with us" />
-      </div>
+     
     </div>
   );
 };

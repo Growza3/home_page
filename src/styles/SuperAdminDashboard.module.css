@@ -1,0 +1,610 @@
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f6f3;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Prevents entire page scrolling */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #4b3f58;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  left: 0;
+  height: 100vh; /* Full height */
+}
+
+.profileSection {
+  text-align: center;
+}
+
+
+.navMenu {
+  background-color: #4b3f58;
+  color: white;
+margin-top: 20px;
+border: none;
+}
+
+.navMenu ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.navMenu li {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.navMenu li svg {
+  margin-right: 10px;
+}
+
+.navMenu li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+  color: red;
+}
+
+.logout:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100vh; /* Full viewport height */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.statsSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.statCard {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h3 {
+  font-size: 24px;
+  color: #4b3f58;
+}
+
+.statCard p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Recent Sales */
+.recentSales {
+  margin-top: 30px;
+}
+
+.salesItems {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.saleItem {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.saleItem img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.saleItem p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Performance Section */
+.performanceSection {
+  width: 300px;
+  background: #fde6a9;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.performanceSection h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.performanceCard {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.performanceCard p {
+  font-size: 14px;
+  color: #777;
+}
+
+.performanceCard h4 {
+  font-size: 18px;
+  color: #4b3f58;
+  margin-top: 5px;
+}
+/* Admins Section */
+.adminsSection {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.adminsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.adminCard {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Toggle Switch */
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background: #34927a;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 2px;
+  bottom: 1px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* Status Colors */
+.activeText {
+  color: #34927a;
+  font-weight: bold;
+}
+
+.blockedText {
+  color: red;
+  font-weight: bold;
+}
+.contactMessagesSection {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contactMessagesSection h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.contactTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.contactTable th, .contactTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.contactTable th {
+  background-color: #34927a;
+  color: white;
+  font-weight: bold;
+}
+
+.contactTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.contactTable tr:hover {
+  background-color: #ddd;
+}
+
+.contactTable td {
+  color: #333;
+  word-wrap: break-word;
+  max-width: 300px;
+}
+
+.chartSection {
+  display: block; /* Prevent flex behavior */
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 300px; /* Ensures it has enough height */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.revenueTableContainer {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.revenueTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.revenueTable th, .revenueTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.revenueTable th {
+  background-color: #34927a;
+  color: white;
+  font-weight: bold;
+}
+
+.revenueTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.revenueTable tr:hover {
+  background-color: #ddd;
+}
+
+.revenueTable td {
+  color: #333;
+  white-space: nowrap;
+}
+.chartsSection {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chartsContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.dashboardCards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  height: 150px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardIcon {
+  font-size: 40px;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e74c3c;
+}
+
+.closeIcon:hover {
+  color: #c0392b;
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.statsTable th, .statsTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.statsTable th {
+  background: #3498db;
+  color: #fff;
+}
+
+.statsTable tr:nth-child(even) {
+  background: #f2f2f2;
+}
+.orderChartsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+.orderChart {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.orderChart:hover {
+  transform: scale(1.05);
+}
+
+h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for total products label */
+.totalProducts {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.userChartsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.userChart {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.userChart:hover {
+  transform: scale(1.05);
+}
+
+h4 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.totalUsers {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+
+.toggleButton {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffcc00;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.reviewPanel {
+  
+  width: 100%;
+  padding: 15px;
+  max-height: 800px;
+  transition: 0.3s ease-in-out;
+}
+
+.reviewCard {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewUser {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.reviewDate {
+  font-size: 12px;
+  color: gray;
+}
+
+.reviewText {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.noReviews {
+  text-align: center;
+  color: gray;
+}

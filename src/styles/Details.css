@@ -1,0 +1,438 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.container{
+    align-items: center;
+    justify-content: center;
+}
+.product-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1100px;
+    height: 540px;
+    max-width: 1200px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left-side Card for Image & Circle */
+.product-card-container {
+    position: relative;
+    background: #eef2ff;;
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Ensures it is positioned left */
+}
+
+.product-image {
+    width: 320px;
+    height: 400px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+.title{
+    margin-top: -20px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Product Details on the Right */
+.product-info {
+    flex: 1;
+    padding-left: 50px; /* Pushes content further right */
+}
+
+.btn {
+    background-color: #218380;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #218380;
+    border: 2px solid #218380;
+}
+.details {
+    margin-top: 10px;
+    display: flex;   /* Make buttons align side by side */
+    gap: 10px;  
+    width: 150px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #218380;
+    display: flex;
+    position: relative;
+    gap: 20px;
+}
+
+.tab:hover {
+    text-decoration: none;
+    background-color: #218380;
+    color: white;
+}
+
+/* Right Side Buttons */
+.side-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: 210px;
+    top: 56%;
+    transform: translateY(-50%);
+    height: 420px;
+    background-color: #edf8f1;
+    padding: 30px;
+    margin-top:1rem;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.option-btn {
+    background-color: #ffffff;
+    color: #218380;
+    border: 1px solid #218380;
+    padding: 10px ;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    width: 120px;
+    margin-top: 10px;
+}
+
+.option-btn i {
+    font-size: 1.5rem;
+    position:relative;
+    margin-top:-1rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.option-btn:hover {
+    background-color: #218380;
+    color: white;
+}
+.extra-info{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #464545;
+    padding: 10px;
+    text-align: left;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.modal-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 900px; /* Ensure it's not too large */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1001; /* Ensure it's above background */
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15%;
+    right: 14%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: #218380;
+  }
+  
+  .close-btn:hover{
+    color: white;
+    background-color: #218380;
+  }
+  
+  .qr-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .qr-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .qr-modal-content h2 {
+    margin-bottom: 15px;
+  }
+  
+  .qr-modal-content .close-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  .farm-process {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .farm-step {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .farm-step:hover {
+    transform: scale(1.05);
+  }
+  
+  .step-icon {
+    font-size: 24px;
+    margin-right: 15px;
+  }
+  
+  .step-details h3 {
+    font-size: 18px;
+    color: #27ae60;
+  }
+  
+  .step-details p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;/* Space between image and thumbnails */
+    gap: 10px;
+  }
+  
+  .thumbnail {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease-in-out, border 0.3s;
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.1);
+    border: 2px solid #4CAF50; /* Green border on hover */
+  }
+  
+  .thumbnail.active {
+    border: 2px solid #4CAF50; /* Highlight selected thumbnail */
+  }
+  .price{
+    font-size: 18px;
+    color: #464545;
+    padding: 10px;
+    text-align: left;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .description{
+    font-size: 20px;
+    color: #8f8787;
+    padding: 10px;
+    text-align: left;
+    font-weight: 1000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .title{
+    font-size: 50px;
+    color: #0a0a0a;
+    padding: 10px;
+    text-align: left;
+    font-weight: 1000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+/* View More Popup Enhancements */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  animation: slideUp 0.4s ease-in-out;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ff5e57;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #d63031;
+}
+
+.popup-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.popup-section {
+  margin-bottom: 20px;
+}
+
+.popup-heading {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #033b1e;
+}
+
+.popup-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #070707;
+}
+
+.popup-list {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  color: #612514;
+}
+
+.popup-list li::before {
+  content: "✔";
+  color: #2ecc71;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.addtocart{
+  width: 250px;
+  margin-top: 50px;
+  background-color:#218380;
+}
+.addtocart:hover{
+  background-color: white;
+  border: 2px solid #218380;
+  color: #218380;
+}

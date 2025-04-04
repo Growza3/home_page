@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik:wght@400;500&family=Bree+Serif&display=swap');
+
+/* Product Grid Layout */
+
+.testimonialSection {
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), url("../assets/images/history.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    border-radius: 40px;
+    margin-top: 2rem;
+    font-family: 'Bree Serif', serif;
+
+  }
+  .testimonialTitle {
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Cinzel Decorative', serif;
+  
+  }
+.highlight{
+  font-size: 40px;
+    font-weight: 600;
+    color: #4caf50; /* Yellow shade */
+    position: relative;
+    display: inline-block;
+    font-family: 'Cinzel Decorative', serif;
+}
+.testimonialTitle::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background-color: #4caf50;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+  .testimonialHeading {
+    font-size: 38px;
+    font-weight: 700;
+    font-family: 'Cinzel Decorative', serif;
+    color: #222;
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .title {
+    font-size: 42px;
+    font-weight: bold;
+  }
+  
+  .highlight {
+    color: #4caf50;
+  }
+  
+  .testimonialContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative; /* Needed for absolute positioning */
+}
+  
+  /* Left Side - Static Image */
+  .imageContainer {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    overflow: visible; /* Ensure overflow is allowed */
+    position: relative; /* Important for absolute positioning inside */
+  }
+
+  
+  .staticImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Scroll effect: Moves left and reappears from right */
+  .slideOut {
+    animation: slideLeft 0.5s forwards;
+  }
+  
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    51% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  
+  /* Right Side - Swiper with Dots */
+  .reviewContainer {
+    width: 55%; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    overflow: visible;
+  }
+  
+  .reviewSwiper {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  
+  .reviewCard {
+   
+    border-radius: 10px;
+padding: 100px;
+  }
+  
+  .reviewContent {
+    position: relative;
+    
+  
+  }
+  
+  .quote {  
+    font-size: 224px; /* Adjusted size */
+    color: #4caf50;
+    position: absolute;
+    top: -120px; /* Moves inside the image */
+    left: 380px;
+    z-index: 10;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .quote2{
+    font-size: 224px; /* Adjusted size */
+    color: #4caf50;
+    position: absolute;
+    top: -120px; /* Moves inside the image */
+    left: 10px;
+    z-index: 10;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .text {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 40px;
+
+  }
+  
+  .author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+  }
+  
+  /* Swiper Pagination (Dots) */
+  .swiper-pagination {
+    bottom: 5px !important;
+  }
+  
+  .swiper-pagination-bullet {
+    background: #ccc !important;
+    opacity: 1 !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #4caf50 !important;
+  }
+  

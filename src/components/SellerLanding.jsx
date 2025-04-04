@@ -8,7 +8,6 @@ import organicBanner from "../assets/images/farm1.jpg";
 import organicGrowth from "../assets/images/aitomato.jpg";
 import sellerSupport from "../assets/images/farmer1.png";
 import fastDelivery from "../assets/images/delivery.jpg";
-import organicMarketplace from "../assets/images/garden.jpg";
 import "../styles/SellerLanding.css";
 import { Link } from "react-router-dom";
 
@@ -54,8 +53,6 @@ const SellerLandingEffects = () => {
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 1 }}
                 >
-                    <h1>Start Selling Organic Products with Ease</h1>
-                    <p>Join a trusted platform designed for organic sellers.</p>
                 </motion.div>
             </header>
 

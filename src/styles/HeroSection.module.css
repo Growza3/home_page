@@ -1,86 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+
 .hero {
-    position: relative;
-    background: url("../assets/sunset.jpg") center/cover no-repeat;
-    color: white;
-    padding: 100px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
-     /* Cropping the extra bottom part */
-     clip-path: inset(0 0 100px 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #abe6ae;
+  padding: 50px 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cinzel Decorative', serif;
 
-  }
-  
-  /* Overlay for dark effect */
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
-    z-index: 1;
-  }
-  
-  
-  .hero-content {
-    max-width: 500px;
-    z-index: 2;
-    position: relative;
-    top: 60%;
-    transform: translateY(-20%); 
-  }
-  
-  .hero-content h1 {
-    font-size: 42px;
-    font-weight: bold;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    margin: 15px 0;
-  }
-  
-  .shop-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  
-  .hero-image {
-    position: relative;
-    z-index: 2; /* Ensures the image stays above the wave */
-    width: 400px; /* Set a fixed width */
-    height: 480px; /* Set a fixed height to make it oval */
-    overflow: hidden; /* Ensures no overflow */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 10%;
-  }
-  
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image scales properly */
-    border-radius: 50% / 35%; /* Creates an oval shape */
-    border: 20px solid white;
-  }
-  
-  
- /* Wave Effect */
-    .wave {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 150px; /* Increase height */
-        z-index: 1; /* Keeps it behind the hero image */
-    }
+}
 
-   
+.heroContent {
+  max-width: 500px;
+  margin-left: 200px;
+  margin-top: -150px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.heroContent.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.discount {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #5a5a5a;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 42px;
+  font-weight: bold;
+  color: #1a1a1a;
+  line-height: 1.2;
+
+}
+
+.shopButton {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #2c7a4b;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.shopButton:hover {
+  background: #205c37;
+}
+
+.heroImage img {
+  width: 400px;
+  height: auto;
+  transform: rotate(-30deg);
+}
+.watermelon-container {
+  position: absolute;
+  left: -150px; /* Start off-screen */
+  bottom: 50px;
+  opacity: 0;
+  transition: transform 1.5s ease-in-out, left 1.5s ease-in-out, opacity 1s;
+}
+
+.watermelon-container.show {
+  left: 700px; /* Moves to visible position */
+  transform: rotate(360deg);
+  opacity: 1;
+}
+
+/* Watermelon Comment Box */
+.comment-box {
+  position: absolute;
+  background: rgba(144, 238, 144, 0.6); /* Light green transparent */
+  padding: 40px 40px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5); /* Faded text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;  /* Adjust for size */
+  height: 100px; /* Adjust for size */
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 1s ease-out forwards;
+  bottom: 150px;
+  margin-left: 670px;
+  bottom: 230px;
+}
+
+
+
+/* Speech Bubble Tail */
+.comment-box::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 40%;
+  width: 20px;
+  height: 20px;
+  background: rgba(144, 238, 144, 0.6);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(-180deg);
+}
+.watermelon-image {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+}
+/* Strawberry Falling from the Top */
+.drip-container {
+  position: absolute;
+  top: -250px; /* Start off-screen */
+  transform: translateX(-50%);
+  transition: top 1s ease-in-out;
+}
+
+.drip-container.show {
+  top: 20px; /* Falls to this position */
+}
+
+.drip-image {
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Leaf Image - Bottom Left Corner */
+.leaf-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.leaf-image {
+  width: 450px; /* Adjust size as needed */
+  height: auto;
+  opacity: 0.8;
+  transform: scale(0.8);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

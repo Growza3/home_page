@@ -1,134 +1,119 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import styles from "../styles/ProductDetail.module.css";
-import Header from "./Header";
-import i1 from "../assets/images/carrot.jpg";
-import i2 from "../assets/images/dragon.png";
-import i3 from "../assets/images/strawberry.png";
-import i4 from "../assets/images/tomato.png";
+import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import axios from "axios";
+import { FaShoppingCart, FaRegHeart, FaStar } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/thumbs";
 
-// Product data
-
-const products = [
-    
-  {
-    id: 1,
-    name: "Organic Carrot",
-    price: 5.99,
-    image: i1,
-    description: "Fresh and organically grown carrots, packed with nutrients.",
-    features: [
-      { id: 1, title: "Rich in Vitamin A", text: "Boosts eyesight and skin health." },
-      { id: 2, title: "Naturally Sweet", text: "No artificial flavors or sweeteners." },
-      { id: 3, title: "Freshly Harvested", text: "Direct from organic farms to your home." },
-    ],
-  },
-  {
-    id: 2,
-    name: "Organic Dragon Fruit",
-    price: 3.99,
-    image: i2,
-    description: "A tropical delight full of antioxidants and fiber.",
-    features: [
-      { id: 1, title: "Boosts Immunity", text: "High in Vitamin C and natural antioxidants." },
-      { id: 2, title: "Hydrating & Refreshing", text: "Perfect for hot summer days." },
-      { id: 3, title: "Supports Digestion", text: "Rich in dietary fiber for gut health." },
-    ],
-  },
-  {
-    id: 3,
-    name: "Organic Strawberry",
-    price: 4.49,
-    image: i3,
-    description: "Sweet and juicy strawberries grown without chemicals.",
-    features: [
-      { id: 1, title: "Rich in Antioxidants", text: "Protects skin and heart health." },
-      { id: 2, title: "No Added Sugar", text: "Pure natural sweetness." },
-      { id: 3, title: "Perfect for Desserts", text: "Great for smoothies, cakes, and jams." },
-    ],
-  },
-  {
-    id: 4,
-    name: "Organic Tomato",
-    price: 6.49,
-    image: i4,
-    description: "Fresh and ripe tomatoes rich in essential vitamins.",
-    features: [
-      { id: 1, title: "High in Lycopene", text: "Promotes heart and skin health." },
-      { id: 2, title: "Zero Preservatives", text: "100% natural farm produce." },
-      { id: 3, title: "Ideal for Cooking", text: "Perfect for salads, sauces, and soups." },
-    ],
-  },
-];
-
-const ProductDetail = () => {
+const ProductDetails = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const product = products.find((p) => p.id === parseInt(id));
-
-  const [zoom, setZoom] = useState(false);
-  const [fadeIn, setFadeIn] = useState(false);
+  const [product, setProduct] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   useEffect(() => {
-    setZoom(true);
-    setTimeout(() => setFadeIn(true), 500);
-  }, []);
+    axios.get(`http://localhost:5000/api/products/${id}`).then((response) => {
+      const { sellerEmail, status, stock, ...productData } = response.data;
+      setProduct(productData);
+    });
+  }, [id]);
 
-  if (!product) {
-    return <div className={styles.productNotFound}>Product not found</div>;
-  }
+  if (!product) return <div className="text-center mt-10">Loading...</div>;
 
   return (
-<>
-      <Header />
-    <div className={styles.container}>
-      {/* Dripping Effect */}
-      <div className={styles.drippingEffect}></div>
-
-      {/* Product Detail Section */}
-      <div className={styles.content}>
-        <div className={styles.textSection}>
-          <h2 className={styles.title}>
-            Welcome to <span>{product.name}</span>
-          </h2>
-
-          {product.features.map((feature) => (
-            <div key={feature.id} className={styles.feature}>
-              <span className={styles.featureNumber}>0{feature.id}</span>
-              <div className={styles.featureText}>
-                <h3>{feature.title}</h3>
-                <p>{feature.text}</p>
-              </div>
-            </div>
+    <div className="max-w-7xl mx-auto p-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-start bg-gray-100 rounded-3xl shadow-lg">
+      
+      {/* Left Section - Image Gallery */}
+      <div className="sticky top-10 w-full md:w-[500px]">
+        <Swiper
+          navigation
+          pagination={{ clickable: true }}
+          modules={[Navigation, Pagination, Thumbs]}
+          thumbs={{ swiper: thumbsSwiper }}
+          className="rounded-xl shadow-lg"
+        >
+          {product.images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <motion.img
+                src={img.startsWith("http") ? img : `http://localhost:5000/uploads/${img}`}
+                alt={`Product ${index + 1}`}
+                className="w-full h-[500px] object-cover rounded-xl"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
-        <div className={styles.imageSection}>
-          <img
-            src={product.image}
-            alt={product.name}
-            className={`${styles.productImage} ${zoom ? styles.zoomInImage : ""}`}
-          />
-        </div>
+        {/* Thumbnail Swiper */}
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={10}
+          slidesPerView={4}
+          freeMode={true}
+          watchSlidesProgress
+          className="mt-4 rounded-lg"
+        >
+          {product.images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img.startsWith("http") ? img : `http://localhost:5000/uploads/${img}`}
+                alt={`Thumbnail ${index + 1}`}
+                className="w-24 h-24 object-cover rounded-lg cursor-pointer border border-gray-300 hover:border-purple-500"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
-      {/* Full Product Description */}
-      <div className={styles.description}>
-        <p>{product.description}</p>
-        <p className={styles.price}>Price: ${product.price}</p>
+      {/* Right Section - Product Details */}
+      <motion.div
+        className="w-full space-y-6 bg-white p-10 rounded-xl shadow-md"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-4xl font-bold text-purple-700">{product.name}</h1>
+        <p className="text-lg text-gray-600">{product.overview}</p>
 
-        <div className={styles.buttons}>
-          <button className={styles.addToCartButton}>🛒 Add to Cart</button>
-          <button className={styles.buyNowButton}>Buy Now</button>
+        {/* Ratings */}
+        <div className="flex items-center space-x-2 text-yellow-500">
+          {[...Array(5)].map((_, i) => (
+            <FaStar key={i} className={i < product.rating ? "text-yellow-500" : "text-gray-300"} />
+          ))}
+          <span className="text-gray-500">({product.rating}/5)</span>
         </div>
 
-        <button onClick={() => navigate("/")} className={styles.backButton}>
-          Back to Products
-        </button>
-      </div>
+        {/* Features */}
+        <div className="bg-gray-100 p-5 rounded-lg">
+          <h2 className="text-xl font-semibold text-gray-800">Features:</h2>
+          <ul className="list-disc ml-5 text-gray-700 space-y-2">
+            {product.productFeatures.map((feature, index) => (
+              <li key={index} className="pl-2">{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Price */}
+        <p className="text-3xl font-semibold text-green-600">₹{product.price}</p>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4">
+          <button className="px-6 py-3 bg-purple-500 text-white rounded-lg shadow-md hover:bg-purple-600 transition-all flex items-center gap-2">
+            <FaShoppingCart /> Add to Cart
+          </button>
+          <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition-all flex items-center gap-2">
+            <FaRegHeart /> Wishlist
+          </button>
+        </div>
+      </motion.div>
     </div>
-    </>
   );
 };
 
-export default ProductDetail;
+export default ProductDetails;

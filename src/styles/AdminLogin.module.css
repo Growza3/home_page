@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps");
+
+:global(:root) {
+  --dark: #2c3e50;
+  --medium-dark: #34495e;
+  --normal: #95a5a6;
+  --light: #ecf0f1;
+  --lighter: #bdc3c7;
+  --accent: #e74c3c; /* Accent color for buttons and highlights */
+  --hover: #c0392b; /* Darker hover effect */
+}
+
+.wrapper {
+    font-family: "Ubuntu", sans-serif;
+    background: linear-gradient(135deg, #2980b9, #8e44ad); /* Gradient background */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.title {
+  color: var(--light);
+  text-shadow: 1px 3px 6px var(--dark);
+  font-weight: bold;
+  opacity: 0;
+  animation: appear 0.8s forwards;
+}
+
+.card {
+  background: var(--light);
+  margin: 50px auto;
+  width: 700px;
+  height: 350px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  animation: appear 1s;
+  border-radius: 10px; /* Added rounded corners */
+}
+
+.signInSection {
+  width: 60%;
+  text-align: center;
+}
+
+.adminIcon {
+  font-size: 80px;
+  padding: 30px;
+  color: var(--dark);
+  text-shadow: 0px 3px 7px #070304;
+  border-radius: 50px;
+  opacity: 0;
+  animation: appear 0.5s forwards;
+  animation-delay: 0.8s;
+}
+
+.inputGroup {
+  position: relative;
+  opacity: 0;
+  animation: appear 0.8s forwards;
+  animation-delay: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  width: 70%;
+}
+
+input {
+  padding-left: 30px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid var(--medium-dark);
+  border-radius: 0;
+  color: var(--medium-dark);
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+input:hover,
+input:active,
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+::placeholder {
+  color: var(--medium-dark);
+  opacity: 0.7;
+}
+
+.icon {
+  position: absolute;
+  left: -20px;
+  color: var(--medium-dark);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.viewIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+}
+
+.submitButton {
+  margin-top: 30px;
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 70%;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  animation: appear 0.8s forwards;
+  animation-delay: 1.2s;
+  transition: all 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+  background: var(--hover);
+}
+
+.dateSection {
+  width: 40%;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px; /* Added rounded corners */
+}
+
+.calendarIcon {
+  font-size: 70px;
+  text-shadow: 0px 3px 7px #000;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: appear 0.5s forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

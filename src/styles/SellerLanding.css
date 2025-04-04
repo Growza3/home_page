@@ -40,8 +40,8 @@
     position: relative;
     z-index: 2;
     color: rgb(6, 5, 5);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     padding-top: 15vh;
+    font-size: 34px;
   }
   
  
@@ -115,21 +115,33 @@
   }
   
   .cta-button {
-    padding: 14px 28px;
     font-size: 1.5rem;
-    border: 2px solid #fff; /* White border for visibility */
-    border-radius: 8px;
-    background-color: #ff6f00;
+    padding: 12px 30px; /* Balanced padding */
+    border: 2px solid #fff;
+    border-radius: 50px; /* Fully rounded edges */
+    background-color: #7c726b;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block; /* Ensures proper spacing */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-  .cta-button:hover {
-    background-color: #e65100;
+.cta-button:hover {
+    background-color: #5a514a;
+    color: #ffd700;
+    border-color: #ffd700;
     transform: scale(1.05);
-  }
-  /* Updated Section Layout */
+}
+
+.cta-button:active {
+    transform: scale(0.95);
+}
 
   
   

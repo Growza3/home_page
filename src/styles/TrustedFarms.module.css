@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik:wght@400;500&family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+
+.trustedFarmsSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: #fff;
+    font-family: 'Bree Serif', serif;
+  }
+  
+  .textContainer {
+    max-width: 50%;
+  }
+  
+  .heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    font-family: 'Cinzel Decorative', serif;
+
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: #fff;
+    background: green;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .imageContainer {
+    position: relative;
+  }
+  
+  .orangeImage {
+    max-width: 500px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .tomatoImage {
+    position: absolute;
+    top: 10%;
+    left: -50px;
+    width: 250px;
+  }
+  

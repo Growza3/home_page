@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Raleway:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #4a7c59;
+  --secondary-color: #2d6a4f;
+  --background-day: url('../assets/images/day-garden.jpg');
+  --background-night: url('../assets/images/night-garden.jpg');
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .contentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    margin-top: 20px;
+  }
+  .lottieContainer {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .lottie {
+    width: 250px;
+    height: 250px;
+  }
+
+.container.night-mode {
+  background: var(--background-night) no-repeat center center/cover;
+}
+
+/* Title with subtle animation */
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  font-family: 'Patrick Hand', cursive;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInTitle 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gardening Tips Grid */
+.tipsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .tipsWrapper {
+    width: 60%;
+  }
+
+/* Tip Cards */
+.tipBox {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+/* Hover effect */
+.tipBox:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tip Titles */
+.tipTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Tip Text */
+.tipText {
+  font-size: 18px;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Parallax Effect */
+@media (prefers-reduced-motion: no-preference) {
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* Day-Night Toggle */
+
+
+/* Floating 3D Elements */
+.floating {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+:root {
+    --primary-color: #4a7c59;
+    --secondary-color: #2d6a4f;
+  }
+  
+ 
+  
+  /* Night Mode Background Effect */
+  .nightMode {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+  }
+  
+  .toggleButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ffcc00;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .toggleButton:hover {
+    background: #ff9900;
+  }
+  

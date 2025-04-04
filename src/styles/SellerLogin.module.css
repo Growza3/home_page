@@ -1,0 +1,132 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:  #1a115c;
+}
+
+.formOuter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+ gap:200px;
+    padding: 20px;
+    border-radius: 12px;
+}
+.formContainer {
+    flex: 1;
+    padding: 20px;
+    width:500px;
+}
+.animationContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:500px;
+    margin-left:20px;
+    gap: 20px;
+}
+
+.buttonContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left:-200px;
+    color: #1a115c;
+    align-items:left;
+    text-align: left;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    outline: none;
+}
+/* Ensure Signup stays on the left */
+.signup-section {
+    order: 1;
+  
+  }
+  .auth-section {
+    display: flex;
+    width: 60%;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: -100px;
+  }
+input:focus {
+    border-color: #2d8f44;
+    box-shadow: 0 0 8px rgba(45, 143, 68, 0.3);
+}
+
+button {
+    width: 80%;
+    padding: 12px;
+    background-color: #2d8f44;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #247238;
+}
+.nextbtn{
+    background-color: #1a115c;
+    color: white;
+    width: 150px;
+    margin-right: 50px;
+  }
+  .nextbtn:hover {
+    background-color: white;
+    color: #1a115c;
+    border: 2px solid #1a115c;
+  }
+  .prevbtn{
+    background-color: #1a115c;
+    color: white;
+    width: 150px;
+  
+  }
+  .prevbtn:hover {
+    background-color: white;
+    color: #1a115c;
+    border: 2px solid #1a115c;
+  }
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

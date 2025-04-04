@@ -1,0 +1,78 @@
+
+  
+  /* Component-specific styles */
+  .card {
+    background-color: #fff;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 1em;
+    position: relative;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    transition: 300ms;
+    top: -80px;
+    left: -100%;
+    right: -100%;
+    margin: auto;
+    height: 400px;
+    width: 400px;
+    background: url("../assets/images/team1.jpg");
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset -1em -0.5em 0 rgba(53, 22, 163, 0.507);
+  }
+  
+  .bottom {
+    margin-top: calc(400px - 80px);
+    padding: 1em;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .professionWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .profession {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
+  
+  .card:hover::before {
+    height: 100%;
+    top: 0;
+    border-radius: 0;
+    opacity: 0.6;
+  }
+  
+  .btn {
+    height: 2em;
+    width: 2em;
+    border: 2px solid rgb(151, 151, 233);
+    box-sizing: content-box;
+    padding: 0.5em;
+    border-radius: 50%;
+    transition: 200ms;
+    cursor: pointer;
+  }
+  
+  .btn svg {
+    transform: translateX(-50%);
+    transition: 200ms;
+  }
+  
+  .btn:hover {
+    background: rgb(151, 151, 233);
+    fill: #fff;
+  }
+  
+  .btn:hover svg {
+    transform: none;
+  }
+  

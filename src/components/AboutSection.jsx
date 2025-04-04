@@ -5,6 +5,7 @@ import foregroundImg from "../assets/p1.jpg"; // Replace with actual image
 import ovalImage1 from "../assets/img1.jpg"; // Replace with actual image path
 import ovalImage2 from "../assets/img2.jpg"; // Replace with actual image path
 
+
 const AboutSection = () => {
   return (
     <div className={styles["about-top-container"]}>

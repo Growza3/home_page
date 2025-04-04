@@ -1,0 +1,164 @@
+/* General Container */
+.container {
+  background: url("../assets/images/2987013.jpg") no-repeat center center/cover;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav a:hover,
+.active {
+  color: orange;
+}
+
+.consultationBtn {
+  background: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.consultationBtn:hover {
+  background: darkorange;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.heroImage {
+  width: 40%;
+  margin-top: 20px;
+}
+
+/* Contact Section */
+.contactSection {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px;
+}
+
+.formContainer,
+.contactInfo {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.formContainer h3,
+.contactInfo h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.formContainer p {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form textarea {
+  height: 80px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: gray;
+}
+
+/* Google Map */
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.mapContainer iframe {
+  width: 80%;
+  height: 350px;
+  border: none;
+}
+
+/* Footer */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.footer h2 {
+  font-size: 22px;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialLinks a {
+  color: gray;
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  color: white;
+}
+
+.footer p {
+  color: gray;
+  margin-top: 10px;
+}

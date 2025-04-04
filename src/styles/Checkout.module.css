@@ -1,0 +1,198 @@
+.checkoutContainer {
+  max-width: 850px;
+  margin: auto;
+  padding: 30px;
+  background: #f9f6f1;
+  border-radius: 16px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Title */
+.checkoutTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #4a5a3f;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Product Details Section */
+.productDetails {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+}
+
+.productDetails:hover {
+  transform: scale(1.02);
+}
+
+/* Product Image */
+.productImage {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+/* Product Info */
+.productInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.productName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.productPrice {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+
+/* Quantity Section */
+.quantitySection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quantityBtn {
+  background: #5a8f29;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.quantityBtn:hover {
+  background: #48771c;
+}
+
+.quantityInput {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+/* Checkout Summary */
+.checkoutSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+/* Subtotal */
+.totalPrice {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4a5a3f;
+  margin-bottom: 20px;
+}
+
+/* Button Container */
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Buttons */
+.checkoutBtn, .continueShoppingBtn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Buy Now Button */
+.checkoutBtn {
+  background: #b56a43;
+  color: white;
+  border: none;
+}
+
+.checkoutBtn:hover {
+  background: #b56a43;
+  transform: scale(1.03);
+}
+
+/* Continue Shopping Button */
+.continueShoppingBtn {
+  background: linear-gradient(to right, #6bbf59, #4a8f3c);
+  color: white;
+  border: none;
+}
+
+.continueShoppingBtn:hover {
+  background: linear-gradient(to right, #5ea14c, #3a7430);
+  transform: scale(1.03);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.inc{
+  width: 30px;
+  padding: 2px;
+  height: 30px;
+  background-color: #b56a43;
+}
+.inc:hover{
+  color: #b56a43;
+  background-color: white;
+  border: 2px solid #b56a43;
+}
+.quant{
+  width: 100px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f9f6f1;
+  border: 2px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,199 @@
+.global {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cont {
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    background-image: url("../assets/images/leaves3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 2000px;
+    
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: .7rem;
+    color: #BCBCBC;
+    letter-spacing: .2rem;
+}
+.paymentSection {
+    display: flex;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    justify-content: space-between;
+}
+  
+.paymentMethods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px 30px;
+    grid-gap: 30px;
+    flex: 1;
+}
+
+.paymentMethods div {
+    background: linear-gradient(135deg, #9ebd93, #218380);
+    border-radius: 10px;
+    padding: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paymentMethods div:nth-child(2) span:first-child {
+    color: #002C8A;
+}
+
+.paymentMethods div:nth-child(2) span:last-child {
+    color: white;
+}
+
+.paymentMethods i{
+    font-size: 50px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    grid-column-gap: 40px;
+}
+
+.billingInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    display: block !important;
+
+}
+
+.billingInfo div {
+    margin: 5px 0 10px 0;
+}
+
+.billingInfo div label {
+    color: #BCBCBC;
+    font-weight: bold;
+    font-size: .7rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.billingInfo div input,
+.billingInfo div select {
+    height: 35px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.cityZip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5px;
+}
+
+.cardInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.cardNumber {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 5px;
+}
+
+.cardNumber div:last-child {
+    padding-top: 20px;
+}
+
+.cardNumber div:last-child p {
+    background: #fff;
+    padding: 8px 5px 5px 5px;
+    color: #000;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.submitButton {
+    margin: 10px 10px 10px 0;
+    width: 30%;
+    padding: 14px;
+    border-radius: 5px;
+    background: #790DCB;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #000;
+    font-size: .7rem;
+}
+
+.billSummary {
+    flex: 0.4;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-left: 5px solid #218380;
+    border-radius: 10px;
+    text-align: left;
+    color: black;
+    position: relative;
+}
+  
+.billSummary h2 {
+    color: #218380;
+    margin-bottom: 10px;
+}
+  
+.billSummary p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+  
+.billSummary hr {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+  
+.billSummary h3 {
+    color: #218380;
+}
+.payBtn{
+    background: linear-gradient(135deg, #9ebd93, #218380);
+    color: white;
+}
+.payBtn:hover{
+    background-color: white;
+    color: #218380;
+    border: 2px solid #218380;
+}
+

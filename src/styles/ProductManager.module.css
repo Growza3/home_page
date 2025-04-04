@@ -1,0 +1,173 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #eff7f9;  
+}
+  
+  .sidebar {
+    width: 250px;
+    background: #089bab;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .sidebar h3 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 30px;
+    background: rgba(239,247,249,255);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .actions {.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar li:hover,
+  .active {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .searchBar {
+    width: 250px;
+  }
+  
+  .table {
+    width: 100%;
+  }
+  
+  .actions button {
+    margin-right: 10px;
+  }
+  
+    display: flex;
+    gap: 10px;
+  }
+  .productImage {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .previewImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .upload {
+    margin-top: 10px;
+  }
+  
+  .select {
+    width: 100%;
+  }
+  .editForm {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .previewImage {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .fieldsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }

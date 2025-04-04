@@ -1,0 +1,101 @@
+.adminContainer {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebarHeading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+}
+
+.navItem {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navItem:hover,
+.navItem.active {
+    background: #1abc9c;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.userSection {
+    margin-bottom: 30px;
+}
+
+.subHeading {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.certified {
+    color: green;
+    font-weight: bold;
+}
+
+.notCertified {
+    color: red;
+    font-weight: bold;
+}
+
+.approveBtn {
+    background-color: #2ecc71;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rejectBtn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveBtn:hover {
+    background-color: #27ae60;
+}
+
+.rejectBtn:hover {
+    background-color: #c0392b;
+}

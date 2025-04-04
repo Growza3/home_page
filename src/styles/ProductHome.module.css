@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik:wght@400;500&family=Bree+Serif&display=swap');
+/* Product Grid Layout */
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 40%;
+  font-family: 'Cinzel Decorative', serif;
+
+}
+
+/* ✅ Adding an underline effect */
+.title::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background-color: #4caf50;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* ✅ Unique effect for the highlight */
+.highlight {
+  color: #4caf50;
+  position: relative;
+}
+
+/* ✅ Adding a glow effect to the highlight */
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 100%;
+  background: rgba(76, 175, 80, 0.2);
+  z-index: -1;
+  transform: skewX(-10deg);
+}
+
+.productContainer{
+  padding: 50px 20px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url("../assets/images/leaves3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  border-radius: 40px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px; /* Reduce this */
+
+  }
+  
+  /* Card Style */
+  .card {
+    margin-top: 100px;
+    background: #fff;
+    border-radius: 20px ;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 450px;
+    width: 350px;
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: transform 0.2s ease-in-out;
+    font-family: 'Bree Serif', serif;
+
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+  }
+  
+  /* Image Container - 75% of Card */
+  .imageContainer {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .thumbnailImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .imageContainer:hover .thumbnailImage {
+    transform: scale(1.05);
+  }
+  
+  /* Product Details */
+  .productDetailContainer {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Splits into two sections */
+    align-items: center;
+    text-align: left;
+    font-family: 'Bree Serif', serif;
+
+}
+/* Left Section: Name & Category */
+.leftDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left */
+    font-family: 'Bree Serif', serif;
+
+}
+
+/* Right Section: Price & Stock */
+.rightDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns text to the right */
+    font-family: 'Bree Serif', serif;
+
+}
+
+  
+.dressName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+  
+.category {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Price */
+.priceDetails {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+/* Stock */
+.stockDetails {
+    font-size: 14px;
+    color: #27ae60; /* Green color for available stock */
+}
+  
+  .oldPrice {
+    text-decoration: line-through;
+    color: #777;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  /* Size & Color Selection */
+  .sizeOptions, .colorOptions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  
+  .sizeOptions span, .colorOptions span {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    background: #f5f5f5;
+    transition: all 0.3s ease;
+  }
+  
+  .sizeOptions span:hover, .colorOptions span:hover {
+    background: #ddd;
+  }
+  
+  /* Rating */
+  .rating {
+    font-size: 14px;
+    color: #f39c12;
+    margin-top: 5px;
+  }
+  
+  /* Buy Button */
+  .buyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff5f6d, #ff7a78);
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    margin-left: 60px;
+  }
+  
+  .buyButton:hover {
+    background: linear-gradient(135deg, #ff3e50, #ff6b6f);
+    transform: scale(1.05);
+  }
+  
+  /* Coupon Section */
+  .couponContainer {
+    display: flex;
+    justify-content: space-around;
+    background: #800080;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .coupon {
+    text-align: center;
+  }
+  
+  .couponCode {
+    font-weight: bold;
+    color: #ffeb3b;
+  }
+/* Cart Icon - Positioned at Top Right */
+.cartIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    z-index: 10; /* Ensures it's always on top */
+}
+
+.cartIcon:hover {
+    background: #e74c3c;
+    color: white;
+}
+.productSwiper {
+  padding-bottom: 80px; /* Ensures pagination is visible */
+}
+
+/* Adjust Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.cartPopup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cartImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.qtyBtn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.cartButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.continueShopping {
+  background: #f5a623;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkoutBtn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Ensure cards fit properly */

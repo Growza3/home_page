@@ -1,35 +1,49 @@
-import React from "react";
-import ProductCard from "./ProductCard";
-import carr from "../assets/images/tomato.png";
-import app from "../assets/images/strawberry.png";
-import bell from "../assets/images/dragon.png";
-import styles from "../styles/ProductPage.module.css";
-
-
-
-const products = [
-  { id: 1, name: "Organic Apple", image: app, price: 5.99, qty: 10 },
-  { id: 2, name: "Fresh Carrot", image: carr, price: 3.49, qty: 15 },
-  { id: 3, name: "Spicy Pepper", image: bell, price: 4.99, qty: 12 },
-  { id: 1, name: "Organic Apple", image: app, price: 5.99, qty: 10 },
-  { id: 2, name: "Fresh Carrot", image: carr, price: 3.49, qty: 15 },
-  { id: 3, name: "Spicy Pepper", image: bell, price: 4.99, qty: 12 },
-  { id: 2, name: "Fresh Carrot", image: carr, price: 3.49, qty: 15 },
-  { id: 3, name: "Spicy Pepper", image: bell, price: 4.99, qty: 12 },
-];
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import styles from "../styles/ProductList.module.css";
 
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  
+
+  useEffect(() => {
+    const fetchApprovedProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/products/approved");
+        if (response.data.success) {
+          setProducts(response.data.products);
+        } else {
+          console.error("Failed to fetch approved products");
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchApprovedProducts();
+  }, []);
+
   return (
-    <div className={styles["product-section"]}>
-      <h2 className={styles["section-title"]}>Our Products</h2>
-      <div className={styles["product-container1"]}>
+    <section className={styles.productSection}>
+      
+      <h2 className={styles.sectionTitle}>Available Organic Products</h2>
+      <div className={styles.productContainer}>
         {products.length > 0 ? (
-          products.map((product) => <ProductCard key={product.id} product={product} />)
+          products.map((product) => (
+            <div key={product._id} className={styles.productItem}>
+              <img src={`http://localhost:5000${product.imageUrl}`} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>Category: {product.category}</p>
+              <p>Price: ₹{product.price}</p>
+              <p>Stock: {product.stock}</p>
+            </div>
+          ))
         ) : (
-          <p>No products available</p>
+          <p>No approved products available.</p>
         )}
       </div>
-    </div>
+     
+    </section>
   );
 };
 

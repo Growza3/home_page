@@ -1,69 +1,101 @@
-/* SellerDashboard.css */
+/* SellerDashboard.module.css */
 
-.dashboard-container {
+.dashboardContainer {
   display: flex;
-  background: #eafaf1;
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  min-height: 90vh; /* Ensures full-page height */
+  overflow: hidden;
 }
 
-.sidebar {
-  width: 250px;
-  background: #2c7057;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.dashboard-title {
+.dashboardTitle {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  color: #2c3e50;
 }
 
-.sidebar-menu li {
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background: #127b68; /* Vibrant natural green */
+  color: white;
+  padding: 20px;
+  height: auto; /* Adjusted to fit container instead of full viewport */
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  margin-right: -260px;
+  gap: 15px;
+}
+
+.sidebarMenu {
   list-style: none;
-  padding: 10px;
+  padding: 0;
+}
+
+.sidebarMenu li {
+  padding: 12px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.sidebar-menu li:hover {
-  background: #3e8c6a;
   border-radius: 5px;
+  transition: background 0.3s;
 }
 
-.visit-store {
+.sidebarMenu li:hover, .sidebarMenu li.active {
+  background: #388e3c; /* Lighter green hover effect */
+}
+
+.visitStore {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.visit-store button {
+.visitStore button {
   background: white;
-  color: #2c7057;
+  color: #1b5e20;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.main-content {
+.logoutButton {
+  background: #d32f2f;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.logoutButton:hover {
+  background: #b71c1c;
+}
+
+/* Main Content Area */
+.mainContent {
+  margin-left: 250px; /* Same as sidebar width */
   flex-grow: 1;
-  padding: 30px;
+  padding: 20px;
+  overflow-y: auto;
+  background: #e8f5e9; /* Soft green background */
+  min-height: 100vh;
 }
 
 .greeting {
   font-size: 1.8rem;
   font-weight: 600;
+  color: #1b5e20;
 }
 
 .highlight {
-  color: #f2b900;
+  color: #ff9800;
 }
 
-.chart-container {
+.chartContainer, .todoList, .topProducts, .latestInvoice, .statItem {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -71,48 +103,24 @@
   margin-bottom: 20px;
 }
 
-.todo-list {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.stats-section {
+.statsSection {
   display: flex;
   gap: 15px;
   margin: 20px 0;
 }
 
-.stat-item {
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.stat-item .icon {
+.statItem .icon {
   font-size: 2rem;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
-.top-products, .latest-invoice {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-.product-list {
+.productList {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
 
-.product-card {
+.productCard {
   background: #f9f9f9;
   padding: 10px;
   border-radius: 8px;
@@ -120,22 +128,88 @@
   flex: 1;
 }
 
-.latest-invoice table {
+.latestInvoice table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.latest-invoice th, .latest-invoice td {
+.latestInvoice th, .latestInvoice td {
   padding: 10px;
   text-align: left;
 }
 
-.latest-invoice button {
-  background: #2c7057;
+.latestInvoice button {
+  background: #388e3c;
   color: white;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Profile Icon Position (Top Right) */
+.profileIconContainer {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.profileIcon {
+  font-size: 30px;
+  color: #4caf50;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profileIcon:hover {
+  transform: scale(1.1);
+}
+
+.certifiedStamp {
+  width: 180px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+  transform: rotate(-10deg);
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+/* Profile Popup */
+.profilePopup {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.profilePopup h3 {
+  margin-bottom: 10px;
+  color: #1b5e20;
+}
+
+.profilePopup p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.profilePopup button {
+  background: #ff9800;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profilePopup button:hover {
+  background: #e68900;
 }

@@ -1,7 +1,7 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*===== VARIABLES CSS =====*/
-:root {
+:global(:root) {
   /*===== Colores =====*/
   --first-color: #F2A20C;
   --white-color: #E9EAEC;
@@ -16,15 +16,15 @@
 }
 
 
-h1, p {
+:global(h1), :global(p) {
   margin: 0;
 }
 
-a {
+:global(a) {
   text-decoration: none;
 }
 
-img {
+:global(img) {
   max-width: 100%;
   height: auto;
 }

@@ -1,0 +1,66 @@
+.weekly-revenue-container {
+    flex: 1; /* Takes up the remaining space in the flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure it takes the full height of the content area */
+    text-align: center;
+  }
+  
+  .weekly-revenue-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .chart-container {
+    width: 50%;
+    max-width: 400px;
+  }
+  .revenueTableContainer {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tableWrapper {
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+  }
+  
+  .revenueTable {
+    width: 500px;
+    border-collapse: collapse;
+  }
+  
+  .revenueTable th, .revenueTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .revenueTable th {
+    background-color: #34927a;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+  }
+  
+  .revenueTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .revenueTable tr:hover {
+    background-color: #ddd;
+  }
+  
+  .revenueTable td {
+    color: #333;
+    white-space: nowrap;
+  }
+  
