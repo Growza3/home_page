@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import QRCode from "react-qr-code";
 import "../styles/Details.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faQrcode, faCreditCard, faStar, faTimes, faEye, faInfoCircle,
