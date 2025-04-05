@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import { Parallax } from "react-parallax";
 import styles from "../styles/HomeGardeningTips.module.css";
 
 import dayBackground from "../assets/images/day-garden.jpg";
