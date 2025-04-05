@@ -1,6 +1,6 @@
 import React from "react";
 import { FaShoppingCart, FaBoxOpen, FaList, FaTruck, FaStar } from "react-icons/fa";
-import "../styles/BuyerDashboard.css";
+import "../styles/buyerDashboard.css";
 
 const BuyerDashboard = () => {
   const orders = [
