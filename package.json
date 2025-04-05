@@ -43,12 +43,8 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.3.6",
-    "react-fontawesome": "^1.7.1",
-    "react-icon": "^1.0.0",
     "react-icons": "^5.5.0",
     "react-lottie": "^1.2.10",
-   
-   
     "react-router-dom": "^7.2.0",
     "react-scroll-parallax": "^3.4.5",
     "react-slick": "^0.30.3",
@@ -58,7 +54,6 @@
     "recharts": "^2.15.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.5",
-    "tailwind": "^4.0.0",
     "tailwind-variants": "^1.0.0"
   },
   "devDependencies": {
