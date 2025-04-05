@@ -82,7 +82,7 @@ const Payment = () => {
   // ✅ Function to handle QR Code scanning confirmation
   const checkPaymentStatus = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/check-payment?email=${buyerEmail}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/check-payment?email=${buyerEmail}`);
       if (response.data.status === "Success") {
         setScannerConfirmed(true);
         alert("Payment Successful!");
@@ -160,7 +160,7 @@ const Payment = () => {
         }));
     }
     console.log("🔹 Sending Order Data:", orderData); // Debugging
-      const response = await axios.post("http://localhost:5000/api/orders", orderData);
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/orders`, orderData);
       alert(response.data.message);
 
       setTimeout(() => {
@@ -177,7 +177,7 @@ const Payment = () => {
     alert(`Transaction completed by ${details.payer.name.given_name}`);
   
     try {
-      await axios.post("http://localhost:5000/api/orders", {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/orders`, {
         buyerEmail,
         paymentMethod: selectedMethod === "scanner" ? "PayPal QR" : "PayPal",
         products: isSingleProductCheckout

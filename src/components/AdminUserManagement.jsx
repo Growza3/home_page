@@ -34,7 +34,7 @@ const userPieData = [
 // Blue for Buyers, Orange for Sellers
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/admin/fetch-users")
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/fetch-users`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {
@@ -52,7 +52,7 @@ const buyerGraphData = buyers.map(buyer => ({
 
     // Approve Seller
     const approveSeller = async (sellerId) => {
-        const response = await fetch("http://localhost:5000/api/admin/approve-seller", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/approve-seller`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ sellerId }),
@@ -71,7 +71,7 @@ const buyerGraphData = buyers.map(buyer => ({
     
     // Reject Seller
     const rejectSeller = async (sellerId) => {
-        const response = await fetch("http://localhost:5000/api/admin/reject-seller", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/reject-seller`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ sellerId }),

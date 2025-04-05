@@ -29,7 +29,7 @@ const PlantDoctor = () => {
     formData.append("file", image);
 
     try {
-      const response = await fetch("http://localhost:5000/api/analyze-plant", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/analyze-plant`, {
         method: "POST",
         body: formData,
       });

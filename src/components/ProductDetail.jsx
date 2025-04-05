@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`).then((response) => {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`).then((response) => {
       const { sellerEmail, status, stock, ...productData } = response.data;
       setProduct(productData);
     });

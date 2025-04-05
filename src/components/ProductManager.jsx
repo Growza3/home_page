@@ -22,7 +22,7 @@ const ProductManager = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products`);
         console.log("Fetched products:", response.data);
         if (response.data && response.data.products) {
           setProducts(response.data.products);
@@ -44,7 +44,7 @@ const ProductManager = () => {
   useEffect(() => {
     const fetchSellers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/sellers");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/sellers`);
         console.log("Fetched sellers:", response.data); // Debugging log
         if (response.data.success) {
           setSellers(response.data.sellers);
@@ -65,7 +65,7 @@ const ProductManager = () => {
 
   const handleStatusChange = async (productId, newStatus) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/update-status/${productId}`, {
+      const response = await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/update-status/${productId}`, {
         status: newStatus,
       });
 
@@ -134,7 +134,7 @@ const ProductManager = () => {
   useEffect(() => {
     const fetchAnalysisData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/analysis");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/analysis`);
         console.log("Fetched analysis data:", response.data);
 
         // Ensure data is properly formatted for Recharts

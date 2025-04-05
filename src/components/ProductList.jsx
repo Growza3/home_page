@@ -9,7 +9,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchApprovedProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products/approved");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products/approved`);
         if (response.data.success) {
           setProducts(response.data.products);
         } else {
@@ -31,7 +31,7 @@ const ProductList = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div key={product._id} className={styles.productItem}>
-              <img src={`http://localhost:5000${product.imageUrl}`} alt={product.name} />
+              <img src={`${import.meta.env.VITE_API_BASE_URL}${product.imageUrl}`} alt={product.name} />
               <h3>{product.name}</h3>
               <p>Category: {product.category}</p>
               <p>Price: ₹{product.price}</p>

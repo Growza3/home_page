@@ -27,7 +27,7 @@ const PaymentFinal = () => {
     const fetchProduct = async () => {
       try {
         console.log("Fetching product with ID:", productId);
-        const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${productId}`);
         const data = await response.json();
         
         console.log("API Response:", data);
@@ -52,7 +52,7 @@ const PaymentFinal = () => {
   const fetchAddress = async () => {
     try {
       console.log("Fetching address for:", userEmail);
-      const response = await fetch(`http://localhost:5000/api/user-address/${userEmail}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/user-address/${userEmail}`);
       const data = await response.json();
       
       console.log("Address API Response:", data);
@@ -87,7 +87,7 @@ const handleSave = async () => {
   try {
     console.log("Saving Address:", addressData);
     
-    const response = await fetch("http://localhost:5000/api/user-address", {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/user-address`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: userEmail, ...addressData }),

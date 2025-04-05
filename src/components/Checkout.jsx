@@ -17,7 +17,7 @@ const Checkout = () => {
     const fetchProduct = async () => {
       if (!productId) return; // Ensure there's a productId before fetching
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${productId}`);
         const data = await response.json();
         
         if (response.ok) {
@@ -39,7 +39,7 @@ const Checkout = () => {
  // Handle quantity change
  const updateQuantityInDatabase = async (newQuantity) => {
   try {
-    const response = await fetch("http://localhost:5000/api/single/update", {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/single/update`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

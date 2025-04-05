@@ -10,7 +10,7 @@ const ProductDetailsModal = ({ productId, onClose }) => {
     if (productId) {
       const fetchProduct = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+          const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${productId}`);
           const data = await response.json();
           setProduct(data);
         } catch (error) {

@@ -15,7 +15,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "http://localhost:5000", // Adjust the backend port
+      '/api': 'http://192.168.5.246:5000', // Adjust the backend port
     },
   },
 });

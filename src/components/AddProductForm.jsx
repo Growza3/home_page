@@ -165,7 +165,7 @@ const AddProductForm = () => {
         }
       });
   
-      const response = await fetch("http://localhost:5000/api/products", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`, {
         method: "POST",
         body: formData,
       });
@@ -363,3 +363,5 @@ const ImageUpload = ({ onDrop }) => {
 };
 
 export default AddProductForm;
+
+

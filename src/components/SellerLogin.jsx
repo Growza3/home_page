@@ -21,7 +21,7 @@ const SellerLogin = () => {
     const checkEmailExists = async (email) => {
 
         try {
-            const response = await fetch("http://localhost:5000/api/auth/check-email", {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/check-email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -54,7 +54,7 @@ const SellerLogin = () => {
                 return;
             }
 
-            const response = await fetch("http://localhost:5000/api/auth/send-otp", {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/send-otp`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -86,7 +86,7 @@ const SellerLogin = () => {
 
     const verifyOTP = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/auth/verify-otp", {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/verify-otp`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, otp }),

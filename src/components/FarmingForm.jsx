@@ -22,7 +22,7 @@ const FarmingForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/custom-farming", formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/custom-farming`, formData);
 
       if (response.data.success) {
         toast.success(" Your appointment has been booked successfully. Check your email!", {

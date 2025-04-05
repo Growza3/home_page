@@ -26,7 +26,7 @@ const OrderManager = () => {
 
   useEffect(() => {
     if (view === "orders" || view === "buyers") {
-      axios.get("http://localhost:5000/api/admin/orders")
+      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/admin/orders`)
         .then((response) => {
           setOrders(response.data);
           console.log("Orders data:", response.data); // Add this line to check the data
@@ -56,7 +56,7 @@ const OrderManager = () => {
   }, [view]);
 
   const updateOrderStatus = (orderId, newStatus) => {
-    axios.put(`http://localhost:5000/api/admin/orders/${orderId}`, { status: newStatus })
+    axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/admin/orders/${orderId}`, { status: newStatus })
       .then((response) => {
         message.success("Order status updated successfully");
         setView("orders"); // Refresh the orders list by re-triggering useEffect
@@ -76,7 +76,7 @@ const OrderManager = () => {
         ...product,
         productName: product.productId?.name,
         productImage: product.productId?.images?.[0] 
-          ? `http://localhost:5000/uploads/${product.productId.images[0]}` 
+          ? `${import.meta.env.VITE_API_BASE_URL}/uploads/${product.productId.images[0]}` 
           : "https://via.placeholder.com/150",
         quantity: product.quantity,
         price: product.productId?.price,
@@ -101,7 +101,7 @@ const OrderManager = () => {
   };
   useEffect(() => {
     if (view === "orders" || view === "analysis") {
-      axios.get("http://localhost:5000/api/admin/orders")
+      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/admin/orders`)
         .then((response) => {
           setOrders(response.data);
         })
@@ -111,7 +111,7 @@ const OrderManager = () => {
 
   useEffect(() => {
     if (view === "analysis") {
-      axios.get("http://localhost:5000/api/cancel")
+      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/cancel`)
         .then((response) => {
           setCancelledOrders(response.data);
         })

@@ -35,7 +35,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/products");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/auth/products`);
         console.log("Fetched Data:", response.data);
 if (response.data) {
     const jsonData = JSON.stringify(response.data);

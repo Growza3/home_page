@@ -13,7 +13,7 @@ const ProductCarousel = () => {
     const navigate = useNavigate(); // Hook for navigation
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/approved-products")
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/approved-products`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched Products:", data); // ✅ Log API response

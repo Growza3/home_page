@@ -69,7 +69,7 @@ navigate("/payment", {
             if (!userEmail) return; // Prevents API call with 'null'
     
             try {
-                const response = await fetch(`http://localhost:5000/api/carts/${userEmail}`);
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/carts/${userEmail}`);
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const data = await response.json();
                 console.log("Cart Data:", data);
@@ -90,7 +90,7 @@ navigate("/payment", {
             if (!userEmail) return; // Ensure user is logged in before fetching
     
             try {
-                const response = await axios.get(`http://localhost:5000/api/delivery?email=${userEmail}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/delivery?email=${userEmail}`);
     
                 if (response.data.length > 0) {  // Ensure array is not empty
                     const details = response.data[0]; // Access first object in array
@@ -159,7 +159,7 @@ navigate("/payment", {
         }
     
         try {
-            await axios.post("http://localhost:5000/api/delivery", {
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/delivery`, {
                 email: userEmail,
                 ...deliveryDetails,
             });
@@ -180,7 +180,7 @@ navigate("/payment", {
     const removeItem = async (cartItemId) => {
         if (!userEmail) return;
         try {
-            const response = await fetch(`http://localhost:5000/api/carts/${userEmail}/${cartItemId}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/carts/${userEmail}/${cartItemId}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             });
@@ -201,7 +201,7 @@ navigate("/payment", {
         }
 
         try {
-            const response = await axios.put("http://localhost:5000/api/carts/update-quantity", {
+            const response = await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/carts/update-quantity`, {
                 email: userEmail,
                 productId: product.productId,
                 quantity: newQuantity,

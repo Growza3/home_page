@@ -34,7 +34,7 @@ const BuyerProfile = () => {
         // Fetch Buyer Details
         const fetchBuyerDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/buyer/${buyerEmail}`);
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/buyer/${buyerEmail}`);
                 const data = await response.json();
                 if (response.ok) setBuyer(data);
             } catch (error) {
@@ -44,7 +44,7 @@ const BuyerProfile = () => {
         // Fetch Delivery Address
         const fetchAddress = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/delivery/${buyerEmail}`);
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/delivery/${buyerEmail}`);
                 const data = await response.json();
 
                 if (response.ok && data) {
@@ -66,7 +66,7 @@ const BuyerProfile = () => {
 
                 console.log("Fetching orders for:", buyerEmail); // Debug Log
 
-                const response = await fetch(`http://localhost:5000/buyer/orders?email=${buyerEmail}`);
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/buyer/orders?email=${buyerEmail}`);
                 const data = await response.json();
 
                 if (response.ok) {

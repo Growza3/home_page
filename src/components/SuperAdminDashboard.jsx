@@ -38,7 +38,7 @@ const [userStats, setUserStats] = useState({
 });
 
 useEffect(() => {
-  fetch("/api/admin/user-stats")
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/user-stats`)
     .then((res) => res.json())
     .then((data) => {
       setUserStats({
@@ -52,7 +52,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchReviews = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/reviews/auth");
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/auth`);
       const data = await response.json();
       console.log("Fetched Reviews:", data);
 
@@ -98,8 +98,8 @@ useEffect(() => {
       let productsRes, sellersRes, ordersRes;
 
       if (type === "Product Manager") {
-        productsRes = await fetch("/api/products");
-        sellersRes = await fetch("/api/sellerdata");
+        productsRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`);
+        sellersRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sellerdata`);
 
            const productsData = await productsRes.json();
       const sellersData = await sellersRes.json();
@@ -126,8 +126,8 @@ useEffect(() => {
         } 
       
       if (type === "User Manager") {
-        sellersRes = await fetch("/api/sellerdata");
-        ordersRes = await fetch("/api/orders");
+        sellersRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sellerdata`);
+        ordersRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders`);
 
         const sellersData = await sellersRes.json();
         const ordersData = await ordersRes.json();
@@ -142,7 +142,7 @@ useEffect(() => {
       } 
       
       if (type === "Order Manager") {
-        ordersRes = await fetch("/api/orders");
+        ordersRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders`);
 
         const ordersData = await ordersRes.json();
 
@@ -173,7 +173,7 @@ useEffect(() => {
   }, [selectedSection]);
   const fetchRevenueData = async () => {
     try {
-      const response = await fetch("/api/revenue");
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/revenue`);
       const data = await response.json();
       setRevenueData(data);
       const total = data.reduce((sum, entry) => sum + entry.revenue, 0);
@@ -185,7 +185,7 @@ useEffect(() => {
 
   const fetchContactMessages = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/contact/all");
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact/all`);
       const data = await response.json();
       console.log("Fetched Messages:", data); // Check if data is received
       setContactMessages(data);
@@ -195,7 +195,7 @@ useEffect(() => {
   };
   const fetchProductStats = async () => {
     try {
-      const productsRes = await fetch("/api/products");
+      const productsRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`);
       const productsData = await productsRes.json();
       const products = Array.isArray(productsData) ? productsData : productsData.products || [];
 
@@ -222,11 +222,11 @@ useEffect(() => {
   };
   const fetchOrderStats = async () => {
     try {
-      const ordersRes = await fetch("/api/orders");
+      const ordersRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders`);
       const ordersData = await ordersRes.json();
       const orders = Array.isArray(ordersData) ? ordersData : ordersData.orders || [];
 
-      const cancelledRes = await fetch("/api/cancel");
+      const cancelledRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cancel`);
       const cancelledData = await cancelledRes.json();
       const cancelledOrders = Array.isArray(cancelledData) ? cancelledData : cancelledData.orders || [];
 
@@ -243,7 +243,7 @@ useEffect(() => {
   };
   const fetchUserStats = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/user-stats");
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/user-stats`);
       const data = await response.json();
       setUserStats(data);
     } catch (error) {
@@ -326,7 +326,7 @@ const toggleAdminStatus = async (index) => {
 
   // Send update to the database
   try {
-    await fetch(`/api/admins/updateStatus`, {
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admins/updateStatus`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

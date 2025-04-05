@@ -68,7 +68,7 @@ const SignUp = ({toggle}) => {
         }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/send-otp", { phone });
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/send-otp`, { phone });
       if (response.status === 200) {
         setOtpSent(true);
         toast.success("OTP sent successfully!");
@@ -94,7 +94,7 @@ const SignUp = ({toggle}) => {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5000/api/users/verify-otp", { phone, otp });
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/verify-otp`, { phone, otp });
       toast.success(response.data.message);
       setOtpVerified(true);
     } catch (err) {
@@ -121,7 +121,7 @@ const SignUp = ({toggle}) => {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5000/api/users/signup", {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/signup`, {
         email,
         password,
         phone
@@ -226,7 +226,7 @@ const SignUp = ({toggle}) => {
 
         <p className={styles.authTitle}>Signup with other options</p>
         <div className={styles.authButtons}>
-          <a href="http://localhost:5000/api/users/auth/google" className={styles.googleButton}><FcGoogle className={styles.icon} /></a>
+          <a href="${import.meta.env.VITE_API_BASE_URL}/api/users/auth/google" className={styles.googleButton}><FcGoogle className={styles.icon} /></a>
         </div>
 
         {error && <p className={styles.error}>{error}</p>}

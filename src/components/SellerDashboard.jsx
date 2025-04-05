@@ -39,7 +39,7 @@ const SellerDashboard = () => {
 
     const fetchSellerData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/sellers/email/${storedEmail}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sellers/email/${storedEmail}`);
         if (!response.ok) {
           console.error("HTTP Error:", response.status);
           throw new Error(`Server responded with ${response.status}`);
@@ -69,7 +69,7 @@ const SellerDashboard = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/seller/${storedEmail}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/seller/${storedEmail}`);
         const data = await response.json();
         if (data.success) {
           setProducts(data.products);
@@ -88,7 +88,7 @@ useEffect(() => {
       
       const fetchOrders = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/orders/${storedEmail}`);
+          const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders/${storedEmail}`);
           const data = await response.json();
     
           if (data.success) {
@@ -109,7 +109,7 @@ useEffect(() => {
   console.log(orders);
   
   useEffect(() => {
-    fetch("http://localhost:5000/api/sales")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sales`)
         .then((res) => res.json())
         .then((data) => {
             if (data.length === 0) {
@@ -136,7 +136,7 @@ useEffect(() => {
     try {
         console.log("📤 Sending review to server...");
 
-        const response = await fetch("http://localhost:5000/api/reviews", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: sellerEmail, review: reviewText.trim() }),

@@ -20,7 +20,7 @@ const ProductHome = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    fetch("http://localhost:5000/home/products-home")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/home/products-home`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched products:", data);
@@ -73,7 +73,7 @@ const ProductHome = () => {
        };
    
        try {
-         await axios.post("http://localhost:5000/api/cart", cartItem, {
+         await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/cart`, cartItem, {
            headers: { Authorization: `Bearer ${token}` },
          });
    

@@ -9,7 +9,7 @@ const CustomizedFarming = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/services/packages")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/services/packages`)
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);

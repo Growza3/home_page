@@ -22,7 +22,7 @@ const AnalyticsDashboard = () => {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/analytics");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/analytics`);
         console.log("API Response:", response.data); // Debugging
         setAnalyticsData(response.data || {});
       } catch (error) {

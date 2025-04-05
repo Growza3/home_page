@@ -22,7 +22,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/contact/add", formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/contact/add`, formData);
       if (response.data.success) {
         setStatus("Message sent successfully!");
         alert("Message Sent Successfully");

@@ -95,7 +95,7 @@ const handleAddToCart = async (product) => {
       };
   
       try {
-        await axios.post("http://localhost:5000/api/cart", cartItem, {
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/cart`, cartItem, {
           headers: { Authorization: `Bearer ${token}` },
         });
   

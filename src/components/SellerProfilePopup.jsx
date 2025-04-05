@@ -24,7 +24,7 @@ const SellerProfilePopup = ({ seller, onUpdate, onClose }) => {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sellers/update/${seller._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/sellers/update/${seller._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

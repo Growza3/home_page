@@ -15,7 +15,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/reviews/auth");
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/auth`);
         if (!response.ok) {
           throw new Error("Failed to fetch reviews");
         }
@@ -37,7 +37,7 @@ const Testimonials = () => {
   const updateProfileImage = (index, data) => {
     if (data.length > 0 && data[index]) {
       const trimmedEmail = data[index].email.split("@")[0];
-      const userImage = `http://localhost:5000/uploads/${trimmedEmail}.jpg`;
+      const userImage = `${import.meta.env.VITE_API_BASE_URL}/uploads/${trimmedEmail}.jpg`;
 
       // Trigger animation before changing image
       setAnimate(true);

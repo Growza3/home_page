@@ -14,8 +14,8 @@ const FlippingCard = ({ product, onUpdate, onDelete }) => {
   // Ensure `product.images` is an array and format the URLs properly
 // Handle both single imageUrl and multiple images array
 const imageUrls = [
-  ...(product.imageUrl ? [`http://localhost:5000${product.imageUrl}`] : []),
-  ...(Array.isArray(product.images) ? product.images.map(img => `http://localhost:5000/uploads/${img}`) : [])
+  ...(product.imageUrl ? [`${import.meta.env.VITE_API_BASE_URL}${product.imageUrl}`] : []),
+  ...(Array.isArray(product.images) ? product.images.map(img => `${import.meta.env.VITE_API_BASE_URL}/uploads/${img}`) : [])
 ];
 
   // Handle input changes
@@ -28,7 +28,7 @@ const imageUrls = [
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/products/${product._id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/products/${product._id}`,
         editedProduct
       );
       onUpdate(response.data);
@@ -41,7 +41,7 @@ const imageUrls = [
   // Delete product
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${product._id}`);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/products/${product._id}`);
       onDelete(product._id);
     } catch (error) {
       console.error("Error deleting product:", error);
