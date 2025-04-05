@@ -9,7 +9,7 @@ import { Pie } from "react-chartjs-2";
 import axios from "axios";
 
 
-import Chatbot from "./Chatbot"; // Import chatbot component
+
 ChartJS.register(CategoryScale, LinearScale, BarElement,LineElement,PointElement, Title, Tooltip, Legend);
 
 const SuperAdminDashboard = () => {
