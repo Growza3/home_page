@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-
+  const Navigate = useNavigate();
+  
   const handleSellerRedirect = () => {
-    window.location.href = "/SellerLanding"; // Redirect to SellerLanding page
+    Navigate("/SellerLanding"); // Redirect to SellerLanding page
   };
 
   return (

@@ -18,7 +18,6 @@ import SellerSignup from "./components/SellerSignup";
 import ProductPage from "./components/ProductPage";
 import SellerDashboard from "./components/SellerDashboard";
 import ProductDetail from "./components/ProductDetail";
-import SellerLanding from "./components/SellerLanding";
 import AddProductForm from "./components/AddProductForm";
 import FlippingCard from "./components/FlippingCard";
 import ProductManager from "./components/ProductManager";
