@@ -226,7 +226,7 @@ const SignUp = ({toggle}) => {
 
         <p className={styles.authTitle}>Signup with other options</p>
         <div className={styles.authButtons}>
-          <a href="${import.meta.env.VITE_API_BASE_URL}/api/users/auth/google" className={styles.googleButton}><FcGoogle className={styles.icon} /></a>
+          <a href={`${import.meta.env.VITE_API_BASE_URL}/api/users/auth/google`} className={styles.googleButton}><FcGoogle className={styles.icon} /></a>
         </div>
 
         {error && <p className={styles.error}>{error}</p>}

@@ -35,7 +35,7 @@ const ProductDetailsModal = ({ productId, onClose }) => {
         <div className="modal-body">
           {/* Left: Product Image */}
           <div className="product-image-section">
-            <img src={`http://localhost:5000/uploads/${product.images[0]}`} alt={product.name} className="product-image" />
+            <img src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${product.images[0]}`} alt={product.name} className="product-image" />
           </div>
 
           {/* Right: Product Details */}

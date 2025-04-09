@@ -39,7 +39,7 @@ const ProductDetails = () => {
           {product.images.map((img, index) => (
             <SwiperSlide key={index}>
               <motion.img
-                src={img.startsWith("http") ? img : `http://localhost:5000/uploads/${img}`}
+                src={img.startsWith("http") ? img : `${import.meta.env.VITE_API_BASE_URL}/uploads/${img}`}
                 alt={`Product ${index + 1}`}
                 className="w-full h-[500px] object-cover rounded-xl"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -62,7 +62,7 @@ const ProductDetails = () => {
           {product.images.map((img, index) => (
             <SwiperSlide key={index}>
               <img
-                src={img.startsWith("http") ? img : `http://localhost:5000/uploads/${img}`}
+                src={img.startsWith("http") ? img : `${import.meta.env.VITE_API_BASE_URL}/uploads/${img}`}
                 alt={`Thumbnail ${index + 1}`}
                 className="w-24 h-24 object-cover rounded-lg cursor-pointer border border-gray-300 hover:border-purple-500"
               />

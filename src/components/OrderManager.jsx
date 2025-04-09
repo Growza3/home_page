@@ -264,7 +264,7 @@ const OrderManager = () => {
         {selectedProduct && (
           <div style={{ textAlign: "center" }}>
             <img
-              src={selectedProduct.productId?.images?.[0] ? `http://localhost:5000/uploads/${selectedProduct.productId.images[0]}` : "https://via.placeholder.com/150"}
+              src={selectedProduct.productId?.images?.[0] ? `${import.meta.env.VITE_API_BASE_URL}/uploads/${selectedProduct.productId.images[0]}` : "https://via.placeholder.com/150"}
               alt={selectedProduct.productId?.name || "Product Image"}
               style={{ width: "150px", height: "150px", objectFit: "cover", borderRadius: "10px", marginBottom: "10px" }}
             />

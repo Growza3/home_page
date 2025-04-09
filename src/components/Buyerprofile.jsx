@@ -111,7 +111,7 @@ const handleSaveProfile = async () => {
 
         console.log("Sending update request with:", updatedData);
 
-        const response = await fetch("http://localhost:5000/api/buyer/update", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/buyer/update`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedData),
@@ -143,7 +143,7 @@ const handleSaveProfile = async () => {
  // ✅ Save Address
  const handleSaveAddress = async () => {
     try {
-        const response = await fetch("http://localhost:5000/api/delivery/save", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/delivery/save`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: buyerEmail, ...address }),
@@ -190,7 +190,7 @@ const validOrders = Array.isArray(orders) ? orders : [];
         if (!confirmCancel) return;
     
         try {
-            const response = await fetch(`http://localhost:5000/api/orders/cancel/${orderId}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders/cancel/${orderId}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ buyerEmail }) // ✅ Include buyerEmail in request body
@@ -420,7 +420,7 @@ const validOrders = Array.isArray(orders) ? orders : [];
     {selectedOrder && selectedOrder.products?.length > 0 ? (
         selectedOrder.products.map((product) => (
             <div key={product.productId?._id} className="carousel-item">
-                <img src={`http://localhost:5000/uploads/${product.productId?.images?.[0]}`} alt={product.productId?.name} />
+                <img src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${product.productId?.images?.[0]}`} alt={product.productId?.name} />
                 <p><strong>{product.productId?.name}</strong></p>
                 <p>Quantity: {product.quantity}</p>
                 <p>Price: ₹{product.productId?.price}</p>

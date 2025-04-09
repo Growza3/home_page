@@ -40,7 +40,8 @@ const nav = () =>{
         <img src={strawberry} alt="strawberry" className={styles["drip-image"]} />
       </div>
 
-      <div className={`${styles.heroContent} ${heroContentVisible ? styles["fade-in"] : ""} `}>        <p className={styles.discount}>EXTRA 50% OFF FOR ALL WINTER PRODUCT</p><br/>
+      <div className={`${styles.heroContent} ${heroContentVisible ? styles["fade-in"] : ""} `}>        
+        <p className={styles.discount}>EXTRA 50% OFF FOR ALL WINTER PRODUCT</p><br/>
         <h1 className={styles.heading}>Modern Problem's <br /> Organic Solution</h1><br/>
         <Link to="/ProductPage" className={styles.shopButton}>Shop Now</Link>      </div>
 

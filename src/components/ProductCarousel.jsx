@@ -39,7 +39,7 @@ const ProductCarousel = () => {
                             {product.images?.length > 0 ? (
     product.images.map((image, index) => (
         <SwiperSlide key={index}>
-            <img src={`http://localhost:5000/uploads/${image}`}
+            <img src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${image}`}
                 alt={`${product.name} ${index + 1}`} 
                 className={styles.productImage} 
                 onError={(e) => console.error("Image Load Error:", e.target.src)} 
