@@ -7,17 +7,18 @@ export default defineConfig({
   json: {
     stringify: true,
   },
-  plugins: [
-    react(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: path.resolve(__dirname, 'public/_redirects'),
-          dest: '.' // copies to dist/ root
-        }
-      ]
-    })
-  ],
+plugins: [
+  react(),
+  viteStaticCopy({
+    targets: [
+      {
+        src: 'public/__redirects',
+        dest: '.', // copied to dist/_redirects
+        rename: '_redirects',
+      },
+    ],
+  }),
+],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
