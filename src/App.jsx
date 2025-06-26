@@ -6,7 +6,7 @@ import Carousel from "./components/Carousel";
 import FeaturesSection from "./components/FeaturesSection";
 import Recipe from "./components/Recipe";
 import ContSign from "./components/ContSign";
-import Profile from "./components/Profile"; // Import the Profile component
+import Profile from "./components/Profile"; // Import the Profile component into the app.js
 import "./App.css";
 import HeroSection from "./components/HeroSection";
 import CounterSection from "./components/CounterSection";
