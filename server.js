@@ -1,32 +1,21 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createServer } from 'vite';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-async function startServer() {
-  const app = express();
+// Serve static assets from dist/
+app.use(express.static(path.join(__dirname, 'dist')));
 
-  const vite = await createServer({
-    server: { middlewareMode: true },
-    appType: 'custom',
-  });
+// SPA Fallback to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
-  app.use(vite.middlewares);
-
-  // Serve static assets
-  app.use(express.static(path.resolve(__dirname, 'dist')));
-
-  // Fallback to index.html for any route
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-  });
-
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-}
-
-startServer();
+// Use the port provided by Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
+});
